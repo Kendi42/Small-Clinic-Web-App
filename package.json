@@ -19,6 +19,7 @@
   "homepage": "https://github.com/dantheuri17/APP4035-Project-1#readme",
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "hbs": "^4.2.0"

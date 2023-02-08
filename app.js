@@ -1,41 +1,66 @@
-const express = require('express')
-const fs = require('fs')
-const cookieParser = require('cookie-parser')
-const sessions = require('express-session')
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const sessions = require("express-session");
+const path = require('path')
 
+const app = express();
+const PORT = 4000;
 
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
-
-const app = express()
-const port = 3000
-
-app.use(express.static(__dirname))
-app.use(cookieParser())
-app.set('views', path.join(__dirname))
-
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 
-app.get('/', (req, res) => {
-    session=req.session
-    if(session.userid) {
-        res.send("Welcome User")
-    } else {
-        res.sendFile('views/index.html', {root: __dirname})
-    }
-})
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//serving public file
+app.use(express.static(__dirname));
+
+// cookie parser middleware
+app.use(cookieParser());
 
 
-app.post('/login', (req, res) => {
-    if (req.body.username == receptionUsername && req.body.password == receptionPassword) {
-        session=req.session;
-        session.userid=req.body.username 
-        console.log(req.session)
-        res.send('Hey there, welcome')
-    } else {
-        res.send('Invalid username or password')
-    }
-})
+// a variable to save a session
+var session;
 
-app.listen(PORT, () => console.log(`Server Running at port ${PORT}`))
+// creating 24 hours from milliseconds
+const oneDay = 1000 * 60 * 60 * 24;
 
+
+//username and password
+const myusername = "user1";
+const mypassword = "mypassword";
+
+//session middleware
+app.use(
+  sessions({
+    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+    saveUninitialized: true,
+    cookie: { maxAge: oneDay },
+    resave: false,
+  })
+);
+
+
+app.get("/", (req, res) => {
+  session = req.session;
+  if (session.userid) {
+    res.send("Welcome User <a href='/logout'>click to logout</a>");
+  } else res.render("index", { root: __dirname });
+});
+
+app.post("/user", (req, res) => {
+  if (req.body.username == myusername && req.body.password == mypassword) {
+    session = req.session;
+    session.userid = req.body.username;
+    console.log(req.session);
+    res.send(`Hey there, welcome <a href=\'/logout'>click to logout</a>`);
+  } else {
+    res.send("Invalid username or password");
+  }
+});
+
+app.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+});
+
+app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));

@@ -1,0 +1,61 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    text-align: center;
+    font-size: 3.5rem;
+}
+.formdiv{
+    background-color: white;
+    width: 50%;
+    height: 100vh;
+    float: right;
+    display: flex;
+    justify-content: center;
+}
+.formcontent{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+input{
+    margin-top: 3em;
+    margin-bottom: 3em;
+
+}
+.btn-primary{
+    margin-top: 0em;
+    background-color: #2AC5C5;
+    border: #2AC5C5 ;
+    padding:0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+
+}
+.buttondiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btn-primary:hover{
+    background-color: #AAE8E8;
+    border: #AAE8E8 ;
+}
+
+.accountsimagediv{
+    background-image:url("../imgs/loginimg.jpg");
+    width: 50%;
+    height: 100vh;
+    float:left;
+    position: relative;
+    background-size:cover;
+}
+
+
+
+
+
+
+

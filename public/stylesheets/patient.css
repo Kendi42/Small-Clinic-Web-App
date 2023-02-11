@@ -6,6 +6,9 @@
 .navbar{
     margin-bottom: 2em;
 }
+a{
+    color: #2AC5C5 !important;
+}
 
 #patientinfodiv{
     color:#ffffff;

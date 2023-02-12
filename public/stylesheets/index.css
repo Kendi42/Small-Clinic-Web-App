@@ -1,0 +1,13 @@
+body {
+    width:100%;
+    height:100vh;
+    background-image: url('../imgs/landing.svg');
+    background-repeat: no-repeat;
+}
+
+.tbox h1{
+    font-weight: bold;
+    padding: 300px 900px;
+    font-size: 100px;
+}
+

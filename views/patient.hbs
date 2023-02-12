@@ -1,99 +1,142 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/stylesheets/patient.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../public/stylesheets/patient.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+			crossorigin="anonymous"
+		/>
 
-    <title>Patient Information</title>
-</head>
-<body>
-    <nav class="navbar">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-        <img src="logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-        <span class="navbar-brand mb-0 h1">MEDITECH</span>        </a>
-    </div>
-  </nav>
-    <div id="content">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">John Doe</li>
-        </ol>
-        </nav>
+		<title>Patient Information</title>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">
+					<img
+						src="logo.svg"
+						alt="Logo"
+						width="30"
+						height="24"
+						class="d-inline-block align-text-top"
+					/>
+					<span class="navbar-brand mb-0 h1">MEDITECH</span>
+				</a>
+			</div>
+		</nav>
+		<div id="content">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+					<li class="breadcrumb-item active" aria-current="page">John Doe</li>
+				</ol>
+			</nav>
 
-    <div id="patientinfodiv" class="row">
-        <div id="namediv" class="col-7">
-            <h1 id="patientname">Mr<br>John Doe</h1>
-        </div>
-        <div id="summaryinfodiv" class="col">
-            <div class="row">
-                <div id="leftinfo" class="col-6">
-                    <p>Sex: <span>Male</span></p>
-                    <p>Blood Type: <span>A+</span></p>
+			<div id="patientinfodiv" class="row">
+				<div id="namediv" class="col-7">
+					<h1 id="patientname">Mr<br />John Doe</h1>
+				</div>
+				<div id="summaryinfodiv" class="col">
+					<div class="row">
+						<div id="leftinfo" class="col-6">
+							<p>Sex: <span>Male</span></p>
+							<p>Blood Type: <span>A+</span></p>
 
-                </div>
-                <div id="rightinfo" class="col">
-                    <p>Age: <span>32</span></p>
-                    <p>Last Visit: <span>21/2/22</span></p>
-                </div>
-            </div>
-           
-        </div>
-    
+						</div>
+						<div id="rightinfo" class="col">
+							<p>Age: <span>32</span></p>
+							<p>Last Visit: <span>21/2/22</span></p>
+						</div>
+					</div>
 
-    </div>
-    <div id="medicalrecordsdiv">
-        <h3 style="padding-bottom: 1em;">Patient Medical Records</h3>
-        <!-- Button trigger modal -->
-        <div id="newrecordbtndiv">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newrecordmodal">
-                New Record
-            </button>
+				</div>
 
-        </div>
-        <!-- New Record Modal -->
-        <div class="modal fade" id="newrecordmodal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="ModalLabel">New Medical Record</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                          <label for="title" class="col-form-label">Record Title:</label>
-                          <input type="text" class="form-control" id="title">
-                        </div>
-                        <div class="mb-3">
-                          <label for="notes" class="col-form-label">Session Notes:</label>
-                          <textarea class="form-control" id="notes"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="prescription" class="col-form-label">Prescription Notes:</label>
-                            <textarea class="form-control" id="prescription"></textarea>
-                          </div>
-                      </form>
+			</div>
+			<div id="medicalrecordsdiv">
+				<h3 style="padding-bottom: 1em;">Patient Medical Records</h3>
+				<!-- Button trigger modal -->
+				<div id="newrecordbtndiv">
+					<button
+						type="button"
+						class="btn btn-primary"
+						data-bs-toggle="modal"
+						data-bs-target="#newrecordmodal"
+					>
+						New Record
+					</button>
 
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div id="medicalrecords">
-            
-        </div>
-    </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-    
-</body>
+				</div>
+				<!-- New Record Modal -->
+				<div
+					class="modal fade"
+					id="newrecordmodal"
+					tabindex="-1"
+					aria-labelledby="ModalLabel"
+					aria-hidden="true"
+				>
+					<div class="modal-dialog modal-xl">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="ModalLabel">New Medical Record</h1>
+								<button
+									type="button"
+									class="btn-close"
+									data-bs-dismiss="modal"
+									aria-label="Close"
+								></button>
+							</div>
+							<div class="modal-body">
+								<form action="patients" method="POST">
+									<div class="mb-3">
+										<label for="patientName" class="col-form-label">Patient Name:</label>
+										<input id="patientName" name="patientName" type="text" class="form-control" id="title"/>
+									</div>
+									<div class="mb-3">
+										<label for="patientAge"  class="col-form-label">Age:</label>
+										<textarea id="patientAge" name="patientAge" class="form-control"></textarea>
+									</div>
+									<div class="mb-3">
+										<label
+											for="prescription"
+											class="col-form-label"
+										>Prescription Notes:</label>
+										<textarea class="form-control" id="prescription"></textarea>
+									</div>
+                                    <div class="modal-footer">
+								<button
+									type="button"
+									class="btn btn-secondary"
+									data-bs-dismiss="modal"
+								>Close</button>
+								<button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+								</form>
+
+							</div>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="medicalrecords">
+                    <table id="patientDetailsTable"></table>
+				</div>
+			</div>
+		</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+			integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+			integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+			crossorigin="anonymous"
+		></script>
+        <script src="../public/js/main.js"></script>
+	</body>
 </html>

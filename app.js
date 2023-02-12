@@ -47,6 +47,10 @@ app.get("/", (req, res) => {
   } else res.render("index", { root: __dirname });
 });
 
+app.get('/login', (req, res) => {
+  res.render('login')
+})
+
 app.post("/user", (req, res) => {
   if (req.body.username == myusername && req.body.password == mypassword) {
     session = req.session;

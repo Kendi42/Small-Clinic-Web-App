@@ -75,7 +75,7 @@ app.post("/user", (req, res) => {
     session.userid = Users[i].username;
     console.log(req.session);
     console.log(Users[i].username)
-    return res.render('doctor')
+    return res.render('reception')
   } 
 }
 return res.send("Invalid username or password");

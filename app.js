@@ -60,7 +60,7 @@ app.get("/", (req, res) => {
   session = req.session;
   if (session.userid) {
     res.send("Welcome User <a href='/logout'>click to logout</a>");
-  } else res.render("home", { root: __dirname });
+  } else res.render("index", { root: __dirname });  // Changed this to index cause thats the first page
 });
 
 app.get('/login', (req, res) => {

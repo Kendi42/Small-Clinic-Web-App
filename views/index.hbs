@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/index.css">
+  <link rel="stylesheet" type="text/css" href="../public/stylesheets/index.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -14,30 +14,46 @@
 
 <body>
 
-  <nav class="navbar">
+  
+  <div id="fullpage">
+    <nav class="navbar">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="../imgs/logo.svg" alt="logo" width="70" height="60" align="left">
-        <h1>MEDITECH</h1>
+        <img src="../public/imgs/logo.svg" alt="logo" width="40" height="40" align="left">
+        <h3>MEDITECH</h3>
       </a>
     </div>
   </nav>
-
-  <div class="tbox">
-    <h1>SPECTRE<br>WELLNESS<br>CLINIC</h1>
-  </div>
-
-    <form action="/login" method="GET">
+    <div id="pagecontent">
+       <div class="tbox">
+      <h1>SPECTRE<br>WELLNESS<br>CLINIC</h1>
+      <form action="/login" method="GET">
         <button class="btn btn-info btn-xl" 
                 type="submit">LOGIN</button>
     </form>
+      </div>
+    </div>
+   
+    
+
+  </div>
+  
 
 <style>
   .btn-xl {
-    padding: 30px 60px;
+    padding: 20px 60px;
     font-size: 22px;
     font-weight: 750;
     border-radius: 10px;
+    margin-left:1em;
+    background-color: #2AC5C5;
+    border: #2AC5C5;
+  }
+  .btn-xl:hover{
+    background-color: #75D3D4;
+    border: #75D3D4;
+
+
   }
 </style>
 

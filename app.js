@@ -75,7 +75,7 @@ app.post("/user", (req, res) => {
     session.userid = Users[i].username;
     console.log(req.session);
     console.log(Users[i].username)
-    return res.render('reception')
+    return res.render('patient')
   } 
 }
 return res.send("Invalid username or password");
@@ -100,5 +100,11 @@ app.get("/logout", (req, res) => {
 app.get('/patient-data', (req, res) => {
   res.send(Patients)
 })
+
+
+app.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+});
 
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));

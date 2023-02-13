@@ -18,7 +18,7 @@
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">
 					<img
-						src="logo.svg"
+						src="../public/imgs/logo.svg"
 						alt="Logo"
 						width="30"
 						height="24"
@@ -70,6 +70,7 @@
 					</button>
 
 				</div>
+
 				<!-- New Record Modal -->
 				<div
 					class="modal fade"
@@ -90,20 +91,17 @@
 								></button>
 							</div>
 							<div class="modal-body">
-								<form action="patients" method="POST">
+								<form action="medrecs" method="POST">
 									<div class="mb-3">
-										<label for="patientName" class="col-form-label">Patient Name:</label>
-										<input id="patientName" name="patientName" type="text" class="form-control" id="title"/>
+										<label for="title" class="col-form-label">Session Title:</label>
+										<input id="title" name="title" type="text" class="form-control"/>
 									</div>
 									<div class="mb-3">
-										<label for="patientAge"  class="col-form-label">Age:</label>
-										<textarea id="patientAge" name="patientAge" class="form-control"></textarea>
+										<label for="sessionnotes"  class="col-form-label">Session Notes:</label>
+										<textarea id="sessionnotes" name="sessNotes" class="form-control"></textarea>
 									</div>
 									<div class="mb-3">
-										<label
-											for="prescription"
-											class="col-form-label"
-										>Prescription Notes:</label>
+										<label for="prescription" class="col-form-label">Prescription Notes:</label>
 										<textarea class="form-control" id="prescription"></textarea>
 									</div>
                                     <div class="modal-footer">

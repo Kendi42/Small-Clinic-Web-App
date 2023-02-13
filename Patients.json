@@ -1,6 +1,16 @@
 [
-  {
+  { "patientID": "1",
     "patientName": "daniel",
-    "patientAge": "21"
+    "patientAge": "21", 
+    "sex": "M",
+    "lastVisit": "21/3/22",
+    "medicalRecords": {
+      "1": {
+        "Date": "21/3/22", 
+        "title": "Mild Coughing", 
+        "sessionnotes": "The patient was mildy coughing and had a sinus infection", 
+        "prescription": "Cough syrup"
+      }
+    }
   }
 ]

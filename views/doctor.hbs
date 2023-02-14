@@ -12,7 +12,7 @@
   <title>Doctors Office</title>
 </head>
 
-<body>
+<body onload="fetchPatients()">
   <section>
 
     <nav class="navbar">
@@ -41,7 +41,7 @@
       <br>
        <div class="rectangle rounded bg-white p-5" style="height:fit-content">
        
-           <table class="table table-hover" id="patients">
+           <!--table class="table table-hover" id="patients">
            <h2 align="left">Patient List</h2><br>
                <thead>
                  <tr>
@@ -70,7 +70,22 @@
                    <td>@twitter</td>
                  </tr>
                </tbody>
+             </table-->
+             
+              <table class="table" id="content">
+           <h2 align="left">Patient List</h2><br>
+               <thead>
+                 <tr>
+                   <th scope="col">#</th>
+                   <th scope="col">Name</th>
+                   <th scope="col">Age</th>
+                   <th scope="col">Last Visit</th>
+                 </tr>
+               </thead>
+               <tbody>
+               </tbody>
              </table>
+
        </div>
 
   </section>

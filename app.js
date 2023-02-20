@@ -96,15 +96,7 @@ app.get("/logout", (req, res) => {
 
 
 
-/*--------- Getting Patient Information -----*/
-app.get('/patient-data', (req, res) => {
-  res.send(Patients)
-})
 
-
-app.get("/logout", (req, res) => {
-  req.session.destroy();
-  res.redirect("/");
-});
 
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
+

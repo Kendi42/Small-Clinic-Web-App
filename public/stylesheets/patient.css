@@ -49,6 +49,10 @@ a{
 
 }
 
+textarea{
+    height:25vh; 
+}
+
 @media (max-width: 767.98px) { 
     #leftinfo, #rightinfo{
         font-size: 0.8em;

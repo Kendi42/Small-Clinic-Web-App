@@ -38,6 +38,17 @@ a{
     justify-content: right;
 }
 
+.btn-primary{
+    background-color: #2AC5C5 !important;
+    border: solid #2AC5C5  !important;
+
+}
+.btn-secondary{
+    background-color: #051320 !important;
+    border: solid #051320  !important;
+
+}
+
 @media (max-width: 767.98px) { 
     #leftinfo, #rightinfo{
         font-size: 0.8em;

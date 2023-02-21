@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 const urlEncoder = bodyParser.urlencoded({extended:true})
 const jsonParser = bodyParser.json()
 const path = require('path')
+const uuid = require('uuid').v4;
+
 
 /* ------  Reading from JSON files ----------*/
 const userJSON = 'Users.json'
@@ -81,13 +83,68 @@ app.post("/user", (req, res) => {
 return res.send("Invalid username or password");
 });
 
-/*-------- Adding Patient ----------*/
+/*-------- Adding Medical Records----------*/
+/*--Shoudl I have the same or different JSON files?---*/
+/*--How do you only write to specific parts of a JSON file? ---*/
+
+/* Patients.medicalRecords.push({
+  id: '4',
+  description: 'New medical record for John Doe'
+});*/
+
+
+/*
+app.post('/patients/:id/medicalRecords', urlEncoder, (req, res) => {
+  const patientId = req.params.id; // get the patient ID from the request parameters
+  const newRecord = req.body; // get the new medical record data from the request body
+  
+  // read the current patient data from the JSON file
+  const patientsData = JSON.parse(readFileSync(patientsJSON));
+  
+  // find the patient with the matching ID
+  const patient = patientsData.find(patient => patient.id === patientId);
+  
+  // add the new medical record to the patient's "medicalRecords" array
+  patient.medicalRecords.push(newRecord);
+  
+  // write the updated patient data back to the JSON file
+  writeFileSync(patientsJSON, JSON.stringify(patientsData, null, 2));
+  
+  res.end();
+}); */
+
+
+app.post('/medrecs', urlEncoder, (req,res) => {
+  const patientID = "1";
+  const recordID = uuid();
+  const dateCreated = new Date().toDateString();
+  const newRecord = req.body;
+  console.log("Medical record", newRecord);
+  console.log("Patients", Patients);
+
+  // find the patient with the matching ID
+  const patient = Patients.find(patient => patient.patientID === patientID);
+  console.log("Patient constant", Patients.find(patient => patient.patientID === patientID));
+
+  // Adding in the record id and date 
+  const completerecord = { id: recordID, date: dateCreated, ...newRecord};
+
+
+  // add the new medical record to the patient's "medicalRecords" array
+  patient.medicalRecords.push(completerecord);
+  console.log("After Record has been added", patient);
+
+  writeFileSync(patientJSON, JSON.stringify(Patients,null,2))
+  return res.render('patient');
+})
+
 
 app.post('/patients', urlEncoder, (req,res) => {
   Patients.push(req.body)
   writeFileSync(patientJSON, JSON.stringify(Patients,null,2))
   res.end()
 })
+
 
 app.get("/logout", (req, res) => {
   req.session.destroy();

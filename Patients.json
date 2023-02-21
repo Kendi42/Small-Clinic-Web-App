@@ -1,16 +1,45 @@
 [
-  { "patientID": "1",
+  {
+    "patientID": "1",
     "patientName": "daniel",
-    "patientAge": "21", 
+    "patientAge": "21",
     "sex": "M",
     "lastVisit": "21/3/22",
-    "medicalRecords": {
-      "1": {
-        "Date": "21/3/22", 
-        "title": "Mild Coughing", 
-        "sessionnotes": "The patient was mildy coughing and had a sinus infection", 
+    "medicalRecords": [
+      {
+        "id": "1",
+        "Date": "21/3/22",
+        "title": "Mild Coughing",
+        "sessionnotes": "The patient was mildy coughing and had a sinus infection",
         "prescription": "Cough syrup"
+      },
+      {
+        "id": "864870d6-a9c4-4817-a865-534e3b829a7d",
+        "title": "Headache",
+        "sessionnotes": "Patient is experiencing severe headache",
+        "prescription": "Panadol"
+      },
+      {
+        "id": "45a76d68-f6b3-4505-a9d7-1702d12b3807",
+        "date": "2023-02-21T14:45:52.134Z",
+        "title": "Stomach Ache",
+        "sessionnotes": "The patient is experiencing extreme stomach upsets",
+        "prescription": "Panadol"
+      },
+      {
+        "id": "e05aeb6b-0769-40e1-9c47-f2a7875c858e",
+        "date": "Tue Feb 21 2023",
+        "title": "Stomach pain",
+        "sessionnotes": "The patient is in pain",
+        "prescription": "Panadol"
+      },
+      {
+        "id": "5fbe19fc-53a8-4e7b-818a-1e94e04373f5",
+        "date": "Tue Feb 21 2023",
+        "title": "pain",
+        "sessionnotes": "paaaaim",
+        "prescription": "panadol"
       }
-    }
+    ]
   }
 ]

@@ -8,32 +8,18 @@
     "lastVisit": "21/3/22",
     "medicalRecords": [
       {
-        "id": "e05aeb6b-0769-40e1-9c47-f2a7875c858e",
-        "date": "Tue Feb 21 2023",
-        "title": "Stomach pain",
-        "sessionnotes": "The patient is in pain",
-        "prescription": "Panadol"
-      },
-      {
-        "id": "5fbe19fc-53a8-4e7b-818a-1e94e04373f5",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "paaaaim",
-        "prescription": "panadol"
-      },
-      {
-        "id": "860e6961-66c3-409e-b721-b3ed16b135fe",
-        "date": "Tue Feb 21 2023",
-        "title": "headache",
-        "sessionnotes": "pain",
-        "prescription": "pain killer"
-      },
-      {
         "id": "5ccfe3b9-0fae-4922-abcb-8b832ab393ec",
         "date": "Fri Feb 24 2023",
         "title": "Anual Checkup and Health Screening 2023",
         "sessionnotes": "Patient appears to be in good condition",
         "prescription": "No presctiption"
+      },
+      {
+        "id": "cea69c71-800c-4bd8-bc9d-7f15fb359fc6",
+        "date": "Fri Feb 24 2023",
+        "title": "Chronic Fatigue",
+        "sessionnotes": "The patient is extremely exhausted",
+        "prescription": "Panadol"
       }
     ]
   }

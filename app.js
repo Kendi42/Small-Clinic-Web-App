@@ -82,10 +82,7 @@ app.post("/user", (req, res) => {
     // Loading the patient medical records when the patient page loads
     const patientID = "1";
     const patient = Patients.find(patient => patient.patientID === patientID);
-    console.log("Patient found", Patients.find(patient => patient.patientID === patientID));
     const medicalRecords = patient.medicalRecords;
-    const patientName= patient.patientName;
-    console.log("Medical Records", medicalRecords); 
     return res.render('patient', {patient, medicalRecords});
   } 
 }
@@ -107,7 +104,6 @@ app.post('/patients', urlEncoder, (req,res) => {
   // Adding in the record id and date 
   const completerecord = { id: recordID, date: dateCreated, ...newRecord};
 
-
   // add the new medical record to the patient's "medicalRecords" array
   patient.medicalRecords.push(completerecord);
   console.log("After Record has been added", patient);
@@ -119,10 +115,35 @@ app.post('/patients', urlEncoder, (req,res) => {
   return res.render('patient', { medicalRecords });
 });
 
+/* --------- Deleting Medical records --------*/
+app.delete('/patients/:id', (req, res) => {
+  console.log("Inside app delete");
+  // Get the patient 
+  const patientID = "1";
+  const patient= Patients.find(patient => patient.patientID === patientID);
+  const patientIndex = Patients.findIndex(patient => patient.patientID === patientID);
+  console.log("Patient Index", patientIndex);
+  // Get the record to be deleted
+  const { id }= req.params;
+  const recordIndex = Patients[patientIndex].medicalRecords.findIndex(record => record.id === id);
+  console.log("RecordIndex", recordIndex);
+  if(recordIndex !== -1){
+    console.log("Patients[patientIndex].medicalRecords: ", Patients[patientIndex].medicalRecords);
+    Patients[patientIndex].medicalRecords.splice(recordIndex, 1);
+    console.log(Patients);
+    writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
+    console.log("Record Deleted");
+    const medicalRecords= patient.medicalRecords;
+    console.log("Updated medical Records", medicalRecords);
+    return res.render('patient', {patient, medicalRecords});
+  }
+});
+
 app.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
+
 
 
 

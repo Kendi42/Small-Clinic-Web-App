@@ -43,13 +43,47 @@ function populateContent(patients) {
 	})
 }
 
-// FEtching the Medical REcords
-function fetchRaces(){
-	const url = server + "/patients";
-	const options = {
-		method: "GET",
-		headers: {
-			'Accept' : "application/json",
-		},
-	};
+// HANDLING THE MEDICAL RECORDS
+// Populating the table
+function populateRecords(medicalRecords) {
+	const tableBody = $('#medical-records-body');
+	tableBody.empty(); // Remove all existing rows from the table
+  
+	medicalRecords.forEach(record => {
+	  const newRow = `
+		<tr>
+		  <td>${record.date}</td>
+		  <td>${record.title}</td>
+		  <td>
+			<button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit-record-modal" onclick="editRecord('${record.id}')">
+			  Edit
+			</button>
+			<button type="button" class="btn btn-sm btn-danger" onclick="deleteRecord('${record.id}')">
+			  Delete
+			</button>
+		  </td>
+		</tr>
+	  `;
+	  tableBody.append(newRow); 
+	});
+  }
+//Deleting a Row
+function deleteRecord(recordID){
+	console.log("Record ID from delte", recordID);
+	fetch(`/patients/${recordID}`, {
+		method: 'DELETE'
+	  })
+	  .then(response => {
+		if (!response.ok) {
+		  throw new Error('Network response was not ok');
+		}
+		return response.json();
+	  })
+	  .then(data => {
+		console.log('Record deleted:', data);
+	  })
+	  .catch(error => {
+		console.error('Error deleting record:', error);
+	  });
+
 }

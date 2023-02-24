@@ -4,204 +4,25 @@
     "patientName": "daniel",
     "patientAge": "21",
     "sex": "M",
-    "lastVisit": "21/3/22",
-    "medicalRecords": [
-      {
-        "id": "e05aeb6b-0769-40e1-9c47-f2a7875c858e",
-        "date": "Tue Feb 21 2023",
-        "title": "Stomach pain",
-        "sessionnotes": "The patient is in pain",
-        "prescription": "Panadol"
-      },
-      {
-        "id": "5fbe19fc-53a8-4e7b-818a-1e94e04373f5",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "paaaaim",
-        "prescription": "panadol"
-      },
-      {
-        "id": "1e2abede-5311-4442-97ce-1b8d176bc0ae",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "paaaaim",
-        "prescription": "panadol"
-      },
-      {
-        "id": "b73c7507-0f6e-48d4-9cb9-b4d32afb3c33",
-        "date": "Tue Feb 21 2023",
-        "title": "",
-        "sessionnotes": "",
-        "prescription": ""
-      },
-      {
-        "id": "860e6961-66c3-409e-b721-b3ed16b135fe",
-        "date": "Tue Feb 21 2023",
-        "title": "headache",
-        "sessionnotes": "pain",
-        "prescription": "pain killer"
-      },
-      {
-        "id": "f06896e2-149e-436d-a9f8-e1b2fcd087c9",
-        "date": "Tue Feb 21 2023",
-        "title": "jedache",
-        "sessionnotes": "pain",
-        "prescription": "pain"
-      },
-      {
-        "id": "b908ef7a-d81b-4f79-8bb2-562bedef899f",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "painnn",
-        "prescription": "killer"
-      },
-      {
-        "id": "2ce83fbe-8990-440d-a8c9-68e4341cc1eb",
-        "date": "Tue Feb 21 2023",
-        "title": "pain in stomach",
-        "sessionnotes": "they are sad",
-        "prescription": "haapiness\r\n"
-      },
-      {
-        "id": "eed1f4a0-57d9-4ffd-a45c-8202c2f64755",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "headache",
-        "prescription": "pain killer"
-      },
-      {
-        "id": "acdd78de-4366-4bdd-892c-6ceebfcb8f01",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "headache",
-        "prescription": "pain killer"
-      },
-      {
-        "id": "84298231-6cef-4156-9800-5b51c6a24f9b",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "headache",
-        "prescription": "pain killer"
-      },
-      {
-        "id": "28d94fb8-6a75-4421-a025-e37b8678d75e",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "headache",
-        "prescription": "pain killer"
-      },
-      {
-        "id": "5fa5b1e1-be11-4abf-b355-5a9dca62be9f",
-        "date": "Tue Feb 21 2023",
-        "title": "malaria",
-        "sessionnotes": "fever",
-        "prescription": "panadol"
-      },
-      {
-        "id": "c13fb6b6-c59c-4eb4-8a37-f71f6d47527a",
-        "date": "Tue Feb 21 2023",
-        "title": "Flu",
-        "sessionnotes": "Cougghing",
-        "prescription": "panadol"
-      },
-      {
-        "id": "78953c99-c6c8-402b-8a97-ad255df30c88",
-        "date": "Tue Feb 21 2023",
-        "title": "Flu",
-        "sessionnotes": "Cougghing",
-        "prescription": "panadol"
-      },
-      {
-        "id": "6adbf5d1-35d7-44d2-85a1-196895d88ed5",
-        "date": "Tue Feb 21 2023",
-        "title": "Flu",
-        "sessionnotes": "Cougghing",
-        "prescription": "panadol"
-      },
-      {
-        "id": "ce6ed5b4-5178-4242-a202-d72c23fa3592",
-        "date": "Tue Feb 21 2023",
-        "title": "Flu",
-        "sessionnotes": "Cougghing",
-        "prescription": "panadol"
-      },
-      {
-        "id": "91b25c35-b976-4647-8e55-cd2367b986e3",
-        "date": "Tue Feb 21 2023",
-        "title": "Flu",
-        "sessionnotes": "Cougghing",
-        "prescription": "panadol"
-      },
-      {
-        "id": "a57963b1-5539-44ce-a78a-a9c4368b3113",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "mucho pain",
-        "prescription": "mucho panadol"
-      },
-      {
-        "id": "da8a3bea-196b-44f0-96d1-d49bb92d518a",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "mucho pain",
-        "prescription": "mucho panadol"
-      },
-      {
-        "id": "935325fe-c85d-401a-b987-1139210d02e6",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "mucho pain",
-        "prescription": "mucho panadol"
-      },
-      {
-        "id": "376da4a1-837e-446e-84ea-2125de188fc6",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "mucho pain",
-        "prescription": "mucho panadol"
-      },
-      {
-        "id": "f3a87e68-59f4-45f6-aadd-53c69103f8b4",
-        "date": "Fri Feb 24 2023",
-        "title": "dfadffgfadfdfadfa",
-        "sessionnotes": "dafewqrqewrdaf",
-        "prescription": "afgafgqrewerqeradf"
-      },
-      {
-        "id": "350f0788-32ef-4437-9336-b107ce671a1c",
-        "date": "Fri Feb 24 2023",
-        "title": "dhttp://localhost:4000/user#fadffgfadfdfadfa",
-        "sessionnotes": "dafewqrqewrdaf",
-        "prescription": "afgafgqrewerqeradf"
-      },
-      {
-        "id": "150310dc-10e8-4caa-873f-499ea0eb9c1b",
-        "date": "Fri Feb 24 2023",
-        "title": "cool",
-        "sessionnotes": "adfa",
-        "prescription": "werefda"
-      },
-      {
-        "id": "68ff6e0a-0857-4a5d-a053-adef010361e7",
-        "date": "Fri Feb 24 2023",
-        "title": "cool",
-        "sessionnotes": "adfa",
-        "prescription": "werefda"
-      },
-      {
-        "id": "c6cef36f-94da-480e-89e3-e80c7def1aa1",
-        "date": "Fri Feb 24 2023",
-        "title": "fdafda",
-        "sessionnotes": "adgadf",
-        "prescription": "abdsafwer"
-      },
-      {
-        "id": "a3cfcd0b-66b6-4760-9f13-ef0ba07e5ad5",
-        "date": "Fri Feb 24 2023",
-        "title": "hello",
-        "sessionnotes": "lose",
-        "prescription": "can't\r\n"
-      }
-    ]
+    "lastVisit": "21/3/22"
+  },
+  {
+    "patientName": "dsdfdasf",
+    "patientAge": "adffwer",
+    "Sex": "agdavbab"
+  },
+  {
+    "id": "8da1b688-1c12-486c-b2ec-e7d5cdb458ec",
+    "date": "Fri Feb 24 2023",
+    "patientName": "daniel",
+    "patientAge": "21",
+    "Sex": "M"
+  },
+  {
+    "id": "5a4c59e1-85a6-4b87-9884-498d3460e31a",
+    "date": "Fri Feb 24 2023",
+    "patientName": "alice",
+    "patientAge": "21",
+    "Sex": "F"
   }
 ]

@@ -115,9 +115,19 @@ app.post('/patientrecs', urlEncoder, (req,res) => {
 })
 
 app.post("/patients", urlEncoder, (req, res) => {
-	Patients.push(req.body);
+	const patientID = uuid()
+	const checkupDate = new Date().toDateString()
+	const newRecord = req.body
+
+	const completeRecord = {id: patientID, date: checkupDate, ...newRecord}
+
+
+	Patients.push(completeRecord);
 	writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
-	res.end();
+
+
+	return res.render('reception', {Patients})
+
 });
 
 app.get("/logout", (req, res) => {

@@ -67,6 +67,7 @@ app.get("/signin", (req, res) => {
 	res.render("login");
 });
 
+
 app.post("/user", (req, res) => {
 
   for (let i = 0; i < Users.length; i++) {
@@ -75,9 +76,10 @@ app.post("/user", (req, res) => {
     session.userid = Users[i].username;
     console.log(req.session);
     console.log(Users[i].username)
-    return res.render('reception')
+    return res.render('doctor')
   } 
 }
+	
 return res.send("Invalid username or password");
 });
 

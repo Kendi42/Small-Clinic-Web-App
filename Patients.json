@@ -1,9 +1,10 @@
 [
   {
     "patientID": "1",
-    "patientName": "daniel",
+    "patientName": "Daniel Theuri",
     "patientAge": "21",
     "sex": "M",
+    "bloodType": "A+",
     "lastVisit": "21/3/22",
     "medicalRecords": [
       {
@@ -117,48 +118,6 @@
         "title": "Flu",
         "sessionnotes": "Cougghing",
         "prescription": "panadol"
-      },
-      {
-        "id": "ce6ed5b4-5178-4242-a202-d72c23fa3592",
-        "date": "Tue Feb 21 2023",
-        "title": "Flu",
-        "sessionnotes": "Cougghing",
-        "prescription": "panadol"
-      },
-      {
-        "id": "91b25c35-b976-4647-8e55-cd2367b986e3",
-        "date": "Tue Feb 21 2023",
-        "title": "Flu",
-        "sessionnotes": "Cougghing",
-        "prescription": "panadol"
-      },
-      {
-        "id": "a57963b1-5539-44ce-a78a-a9c4368b3113",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "mucho pain",
-        "prescription": "mucho panadol"
-      },
-      {
-        "id": "da8a3bea-196b-44f0-96d1-d49bb92d518a",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "mucho pain",
-        "prescription": "mucho panadol"
-      },
-      {
-        "id": "935325fe-c85d-401a-b987-1139210d02e6",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "mucho pain",
-        "prescription": "mucho panadol"
-      },
-      {
-        "id": "376da4a1-837e-446e-84ea-2125de188fc6",
-        "date": "Tue Feb 21 2023",
-        "title": "pain",
-        "sessionnotes": "mucho pain",
-        "prescription": "mucho panadol"
       }
     ]
   }

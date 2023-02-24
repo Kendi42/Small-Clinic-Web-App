@@ -77,50 +77,28 @@ app.post("/user", (req, res) => {
     session.userid = Users[i].username;
     console.log(req.session);
     console.log(Users[i].username)
-    return res.render('patient')
+
+    // When going to patient page. Ideally this should be from the doctors page. It is just here for now
+    // Loading the patient medical records when the patient page loads
+    const patientID = "1";
+    const patient = Patients.find(patient => patient.patientID === patientID);
+    console.log("Patient found", Patients.find(patient => patient.patientID === patientID));
+    const medicalRecords = patient.medicalRecords;
+    const patientName= patient.patientName;
+    console.log("Medical Records", medicalRecords); 
+    return res.render('patient', {patient, medicalRecords});
   } 
 }
 return res.send("Invalid username or password");
 });
 
-/*-------- Adding Medical Records----------*/
-/*--Shoudl I have the same or different JSON files?---*/
-/*--How do you only write to specific parts of a JSON file? ---*/
-
-/* Patients.medicalRecords.push({
-  id: '4',
-  description: 'New medical record for John Doe'
-});*/
-
-
-/*
-app.post('/patients/:id/medicalRecords', urlEncoder, (req, res) => {
-  const patientId = req.params.id; // get the patient ID from the request parameters
-  const newRecord = req.body; // get the new medical record data from the request body
-  
-  // read the current patient data from the JSON file
-  const patientsData = JSON.parse(readFileSync(patientsJSON));
-  
-  // find the patient with the matching ID
-  const patient = patientsData.find(patient => patient.id === patientId);
-  
-  // add the new medical record to the patient's "medicalRecords" array
-  patient.medicalRecords.push(newRecord);
-  
-  // write the updated patient data back to the JSON file
-  writeFileSync(patientsJSON, JSON.stringify(patientsData, null, 2));
-  
-  res.end();
-}); */
-
-
-app.post('/medrecs', urlEncoder, (req,res) => {
+/* --------- Patients page and adding Medical records --------*/
+app.post('/patients', urlEncoder, (req,res) => {
   const patientID = "1";
   const recordID = uuid();
   const dateCreated = new Date().toDateString();
   const newRecord = req.body;
   console.log("Medical record", newRecord);
-  console.log("Patients", Patients);
 
   // find the patient with the matching ID
   const patient = Patients.find(patient => patient.patientID === patientID);
@@ -139,15 +117,7 @@ app.post('/medrecs', urlEncoder, (req,res) => {
   const medicalRecords = patient.medicalRecords;
   console.log("Medical Records", medicalRecords); 
   return res.render('patient', { medicalRecords });
-})
-
-
-app.post('/patients', urlEncoder, (req,res) => {
-  Patients.push(req.body)
-  writeFileSync(patientJSON, JSON.stringify(Patients,null,2))
-  res.end()
-})
-
+});
 
 app.get("/logout", (req, res) => {
   req.session.destroy();

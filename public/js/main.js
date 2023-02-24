@@ -42,3 +42,14 @@ function populateContent(patients) {
 		let textAge = document.createTextNode(patients.age)
 	})
 }
+
+// FEtching the Medical REcords
+function fetchRaces(){
+	const url = server + "/patients";
+	const options = {
+		method: "GET",
+		headers: {
+			'Accept' : "application/json",
+		},
+	};
+}

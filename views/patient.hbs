@@ -28,25 +28,25 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-					<li class="breadcrumb-item active" aria-current="page">John Doe</li>
+					<li class="breadcrumb-item active" aria-current="page">{{patient.patientName}}</li>
 				</ol>
 			</nav>
 
 			<!--SUMMARY PATIENT INFORMATION-->
 			<div id="patientinfodiv" class="row">
 				<div id="namediv" class="col-7">
-					<h1 id="patientname">Mr<br />John Doe</h1>
+					<h1 id="patientname"><span id="patientnametitle">Patient Name:</span><br />{{patient.patientName}}</h1>
 				</div>
 				<div id="summaryinfodiv" class="col">
 					<div class="row">
 						<div id="leftinfo" class="col-6">
-							<p>Sex: <span>Male</span></p>
-							<p>Blood Type: <span>A+</span></p>
+							<p>Sex: <span>{{patient.sex}}</span></p>
+							<p>Blood Type: <span>{{patient.bloodType}}</span></p>
 
 						</div>
 						<div id="rightinfo" class="col">
-							<p>Age: <span>32</span></p>
-							<p>Last Visit: <span>21/2/22</span></p>
+							<p>Age: <span>{{patient.patientAge}}</span></p>
+							<p>Last Visit: <span>{{patient.lastVisit}}</span></p>
 						</div>
 					</div>
 
@@ -72,7 +72,7 @@
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<form action="medrecs" method="POST">
+								<form action="patients" method="POST">
 									<div class="mb-3">
 										<label for="title" class="col-form-label">Session Title:</label>
 										<input id="title" name="title" type="text" class="form-control"/>
@@ -87,7 +87,7 @@
 									</div>
                                     <div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-								<button type="submit" class="btn btn-primary">Save changes</button>
+								<button type="submit" class="btn btn-primary">Create</button>
                                 </div>
 								</form>
 							</div>
@@ -100,9 +100,9 @@
 				<table class="table">
 				<thead>
 					<tr>
-					<th>Date</th>
+					<th>Date Created</th>
 					<th>Title</th>
-					<th>Action</th>
+					<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -111,17 +111,17 @@
 					<td>{{date}}</td>
 					<td>{{title}}</td>
 					<td>
-						<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordModal{{id}}">Edit</button>
+						<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordModal{{id}}">Details</button>
 						<button class="btn btn-danger" onclick="deleteRecord('{{id}}')">Delete</button>
 					</td>
 					</tr>
 
-					<!-- Edit Record Modal -->
+					<!-- Edit Record Modal/ View Details -->
 					<div class="modal fade" id="editRecordModal{{this.id}}" tabindex="-1" aria-labelledby="editRecordModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="editRecordModalLabel">Edit Medical Record</h5>
+							<h5 class="modal-title" id="editRecordModalLabel">Details</h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
@@ -131,8 +131,12 @@
 								<input type="text" class="form-control" id="recordTitle" value="{{this.title}}">
 							</div>
 							<div class="mb-3">
-								<label for="recordDescription" class="form-label">Description</label>
-								<textarea class="form-control" id="recordDescription" rows="3">{{this.description}}</textarea>
+								<label for="recordNotes" class="form-label">Description</label>
+								<textarea class="form-control" id="recordNotes" rows="3">{{this.sessionnotes}}</textarea>
+							</div>
+							<div class="mb-3">
+								<label for="recordPrescription" class="form-label">Description</label>
+								<textarea class="form-control" id="recordPrescription" rows="3">{{this.prescription}}</textarea>
 							</div>
 							</form>
 						</div>

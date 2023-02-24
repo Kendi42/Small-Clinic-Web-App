@@ -1,6 +1,28 @@
 [
   {
+    "patientID": "1",
     "patientName": "daniel",
-    "patientAge": "21"
+    "patientAge": "21",
+    "sex": "M",
+    "lastVisit": "21/3/22"
+  },
+  {
+    "patientName": "dsdfdasf",
+    "patientAge": "adffwer",
+    "Sex": "agdavbab"
+  },
+  {
+    "id": "8da1b688-1c12-486c-b2ec-e7d5cdb458ec",
+    "date": "Fri Feb 24 2023",
+    "patientName": "daniel",
+    "patientAge": "21",
+    "Sex": "M"
+  },
+  {
+    "id": "5a4c59e1-85a6-4b87-9884-498d3460e31a",
+    "date": "Fri Feb 24 2023",
+    "patientName": "alice",
+    "patientAge": "21",
+    "Sex": "F"
   }
 ]

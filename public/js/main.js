@@ -87,3 +87,14 @@ function deleteRecord(recordID){
 	  });
 
 }
+
+//Selecting a patient and viewing it
+function patientPage(patientID){
+	console.log("Patient ID", patientID);
+	fetch(`/patients/${patientID}`, {
+		method: 'POST'
+	  })
+    .catch(error => {
+		console.error('Error', error);
+	  });
+}

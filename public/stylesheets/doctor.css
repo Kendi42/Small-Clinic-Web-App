@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-color: #F5F5F5 !important;
+   
+}
+
+#content{
+    width:90vw;
+    margin: 0 auto;
+}
+
+.navbar{
+    margin-bottom: 2em;
+}
+a{
+    color: #000000 !important;
+}
+
+#doctorinfodiv{
+    color:#000000;
+    background-color:white;
+    padding:2.5em;
+    border-radius: 1em;
+    margin-top: 10em;
+    margin-bottom: 2em;
+
+
+}
+
+#patientinfodiv{
+    color:#000000;
+    background-color:white;
+    padding:2.5em;
+    border-radius: 1em;
+    margin-top: 5em;
+    margin-bottom: 2em;
+
+
+}
+
+
+.pic{
+    
+    height: 260;
+    width: 260;
+    margin-left: 1350;
+    margin-top: -168;
+}
+#patientname{
+    font-size: 3em;
+    font-weight: 600;
+}
+
+#leftinfo, #rightinfo{
+    font-size: 1.2em;
+    padding-left: 2.5em;  
+
+}
+#leftinfo{
+    border-right: solid #ffffff;
+}
+
+#newrecordbtndiv{
+    display: flex;
+    justify-content: right;
+}
+
+.btn-primary{
+    background-color: #2AC5C5 !important;
+    border: solid #2AC5C5  !important;
+
+}
+.btn-secondary{
+    background-color: #051320 !important;
+    border: solid #051320  !important;
+
+}
+
+textarea{
+    height:25vh; 
+}
+
+@media (max-width: 767.98px) { 
+    #leftinfo, #rightinfo{
+        font-size: 0.8em;
+        padding-left: 1em;  
+    
+    }
+
+    #patientname{
+        font-size: 2em;
+        font-weight: 500;
+    }
+
+ }
+ @media (max-width: 575.98px) {
+    #leftinfo{
+        border:none;
+    }
+    #leftinfo, #rightinfo{
+        font-size: 0.8em;
+        padding-left: 0.5em;  
+    
+    }
+    
+ }

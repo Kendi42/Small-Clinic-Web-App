@@ -77,13 +77,16 @@ app.post("/user", (req, res) => {
     session.userid = Users[i].username;
     console.log(req.session);
     console.log(Users[i].username)
+    // Linking to the Doctors page
+    console.log("Patient information", Patients);
+    return res.render('doctor', {Patients});
 
     // When going to patient page. Ideally this should be from the doctors page. It is just here for now
     // Loading the patient medical records when the patient page loads
-    const patientID = "1";
-    const patient = Patients.find(patient => patient.patientID === patientID);
-    const medicalRecords = patient.medicalRecords;
-    return res.render('patient', {patient, medicalRecords});
+    //const patientID = "1";
+    //const patient = Patients.find(patient => patient.patientID === patientID);
+    //const medicalRecords = patient.medicalRecords;
+    //return res.render('patient', {patient, medicalRecords});
   } 
 }
 return res.send("Invalid username or password");

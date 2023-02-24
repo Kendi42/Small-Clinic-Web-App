@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const sessions = require("express-session");
-const { readFileSync, writeFileSync } = require('fs')
+const { readFileSync, writeFileSync, readFile } = require('fs')
 const bodyParser = require('body-parser')
 const urlEncoder = bodyParser.urlencoded({extended:true})
 const jsonParser = bodyParser.json()
@@ -21,7 +21,7 @@ let rawPatients = readFileSync(patientJSON)
 let Patients = JSON.parse(rawPatients)
 
 const app = express();
-const PORT = 4000;
+const PORT = 5000;
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
@@ -115,29 +115,31 @@ app.post('/patients', urlEncoder, (req,res) => {
   return res.render('patient', { medicalRecords });
 });
 
+// app.get('/patients/1', (req,res) => {
+//   return res.render()
+// })
+
 /* --------- Deleting Medical records --------*/
-app.delete('/patients/:id', (req, res) => {
-  console.log("Inside app delete");
-  // Get the patient 
-  const patientID = "1";
-  const patient= Patients.find(patient => patient.patientID === patientID);
-  const patientIndex = Patients.findIndex(patient => patient.patientID === patientID);
-  console.log("Patient Index", patientIndex);
-  // Get the record to be deleted
-  const { id }= req.params;
-  const recordIndex = Patients[patientIndex].medicalRecords.findIndex(record => record.id === id);
-  console.log("RecordIndex", recordIndex);
-  if(recordIndex !== -1){
-    console.log("Patients[patientIndex].medicalRecords: ", Patients[patientIndex].medicalRecords);
-    Patients[patientIndex].medicalRecords.splice(recordIndex, 1);
-    console.log(Patients);
-    writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
-    console.log("Record Deleted");
-    const medicalRecords= patient.medicalRecords;
-    console.log("Updated medical Records", medicalRecords);
-    return res.render('patient', {patient, medicalRecords});
-  }
+app.delete("/patients/:id", (req, res) => {
+	const patientID = "1";
+	const patient = Patients.find((patient) => patient.patientID === patientID);
+	const patientIndex = Patients.findIndex(
+		(patient) => patient.patientID === patientID
+	);
+	const { id } = req.params;
+	const recordIndex = Patients[patientIndex].medicalRecords.findIndex(
+		(record) => record.id === id
+	);
+	if (recordIndex !== -1) {
+		Patients[patientIndex].medicalRecords.splice(recordIndex, 1);
+		writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
+		let medicalRecords = patient.medicalRecords.filter(
+			(record) => record.id !== id
+		);
+		return res.render("patient", { patient, medicalRecords });
+	}
 });
+
 
 app.get("/logout", (req, res) => {
   req.session.destroy();

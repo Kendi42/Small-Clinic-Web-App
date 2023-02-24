@@ -67,23 +67,41 @@ function populateRecords(medicalRecords) {
 	  tableBody.append(newRow); 
 	});
   }
-//Deleting a Row
-function deleteRecord(recordID){
-	console.log("Record ID from delte", recordID);
-	fetch(`/patients/${recordID}`, {
-		method: 'DELETE'
-	  })
-	  .then(response => {
-		if (!response.ok) {
-		  throw new Error('Network response was not ok');
-		}
-		return response.json();
-	  })
-	  .then(data => {
-		console.log('Record deleted:', data);
-	  })
-	  .catch(error => {
-		console.error('Error deleting record:', error);
-	  });
+// //Deleting a Row
+// function deleteRecord(recordID){
+// 	console.log("Record ID from delte", recordID);
+// 	fetch(`/patients/${recordID}`, {
+// 		method: 'DELETE'
+// 	  })
+// 	  .then(response => {
+// 		if (!response.ok) {
+// 		  throw new Error('Network response was not ok');
+// 		}
+// 		return response.json();
+// 	  })
+// 	  .then(data => {
+// 		console.log('Record deleted:', data);
+// 	  })
+// 	  .catch(error => {
+// 		console.error('Error deleting record:', error);
+// 	  });
 
+// }
+
+
+function deleteRecord(recordID) {
+	// Send DELETE request to server
+	fetch(`/patients/${recordID}`, {
+		method: "DELETE",
+	})
+		.then((response) => {
+			// Remove the table row from the DOM
+			const row = document.getElementById(`record-${recordID}`);
+			if (row) {
+				row.remove();
+			}
+		})
+		.catch((error) => {
+			console.error("Error deleting record:", error);
+		});
 }

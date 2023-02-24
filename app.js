@@ -75,8 +75,9 @@ app.post("/user", (req, res) => {
     session = req.session;
     session.userid = Users[i].username;
     console.log(req.session);
-    console.log(Users[i].username)
-    return res.render('doctor')
+    console.log(Users[i].username);
+    console.log("Patient information", Patients);
+    return res.render('doctor', {Patients});
   } 
 }
 	

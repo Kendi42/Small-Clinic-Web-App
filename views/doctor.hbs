@@ -23,7 +23,7 @@
 				<div id="namediv" class="col-7">
 					 <h1 id="doctorname" align="left" style="font-size: 60px;"><span style="color:#2AC5C5; font: size 60px;">Welcome</span>, Dr.Jane Doe</h1>
 					 <h6 class="display-6" align="left">Todays Date: 06/02/2023</h6>
-			 <img src="../public/imgs/doctor.svg" class="pic">
+        <img src="../public/imgs/doctor.svg" class="pic">
 				</div>
 			
 			</div>
@@ -32,12 +32,12 @@
 			<div id="patientinfodiv">
 				<h2 style="padding-bottom: 0.5em;">Patient List</h2>
 				<!-- Displaying the Patients information-->
-				<table class="table">
+				<table class="table" id="patientDetailsTable">
 				<thead>
 					<tr>
 					<th>Name</th>
 					<th>Age</th>
-					<th>Sex</th>
+          <th>Gender</th>
 					<th>Last Visit</th>
 					<th>Action</th>
 					</tr>
@@ -47,10 +47,11 @@
 					<tr>
 					<td>{{patientName}}</td>
 					<td>{{patientAge}}</td>
-					<td>{{sex}}</td>
+          <td>{{sex}}</td>
 					<td>{{lastVisit}}</td>
+          
 					<td>
-						<button class="btn btn-primary">View</button>
+						<button class="btn btn-primary" onclick="patientPage('{{patientID}}')">View</button>
 					</td>
 					</tr>
 					 {{/each}}

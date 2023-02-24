@@ -5,6 +5,7 @@ const { readFileSync, writeFileSync } = require("fs");
 const bodyParser = require("body-parser");
 const urlEncoder = bodyParser.urlencoded({ extended: true });
 const path = require("path");
+const uuid = require('uuid').v4
 
 /* ------  Reading from JSON files ----------*/
 const userJSON = "Users.json";
@@ -74,7 +75,7 @@ app.post("/user", (req, res) => {
     session.userid = Users[i].username;
     console.log(req.session);
     console.log(Users[i].username)
-    return res.render('patient')
+    return res.render('reception')
   } 
 }
 return res.send("Invalid username or password");
@@ -82,9 +83,36 @@ return res.send("Invalid username or password");
 
 /*-------- Adding Patient ----------*/
 
-app.get("/patients", (req, res) => {
-	res.send(Patients);
-});
+// app.get("/reception", (req, res) => {
+// 	res.send(Patients);
+// });
+
+app.post('/patientrecs', urlEncoder, (req,res) => {
+  const patientID = "1";
+  const recordID = uuid();
+  const dateCreated = new Date().toDateString();
+  const newRecord = req.body;
+  console.log("Medical record", newRecord);
+  console.log("Patients", Patients);
+
+  // find the patient with the matching ID
+  const patient = Patients.find(patient => patient.patientID === patientID);
+  console.log("Patient constant", Patients.find(patient => patient.patientID === patientID));
+
+  // Adding in the record id and date 
+  const completerecord = { id: recordID, date: dateCreated, ...newRecord};
+
+
+  // add the new medical record to the patient's "medicalRecords" array
+  patient.medicalRecords.push(completerecord);
+  console.log("After Record has been added", patient);
+  writeFileSync(patientJSON, JSON.stringify(Patients,null,2));
+
+  // Getting all the patient medical records to update the display on the screen
+  const medicalRecords = patient.medicalRecords;
+  console.log("Medical Records", medicalRecords); 
+  return res.render('reception', { medicalRecords });
+})
 
 app.post("/patients", urlEncoder, (req, res) => {
 	Patients.push(req.body);

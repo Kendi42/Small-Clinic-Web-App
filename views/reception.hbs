@@ -37,47 +37,104 @@
           <!--h6 align="left" class="display-6">Todays Date: 06/02/2023</h6>
            <img src="../imgs/doctor.svg" class="pic"alt="logo" width="70" height="60" align="right"-->
         </div>
+        
+				<!-- Button trigger New Record modal -->
+				<div id="newrecordbtndiv">
+					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newrecordmodal">New Record</button>
+				</div>
+
+      <!-- New Record Modal -->
+				<div class="modal fade" id="newrecordmodal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-xl">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="ModalLabel">New Medical Record</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<form action="patientrecs" method="POST">
+									<div class="mb-3">
+										<label for="title" class="col-form-label">Session Title:</label>
+										<input id="title" name="title" type="text" class="form-control"/>
+									</div>
+									<div class="mb-3">
+										<label for="sessionnotes"  class="col-form-label">Session Notes:</label>
+										<textarea id="sessionnotes" name="sessionnotes" class="form-control"></textarea>
+									</div>
+									<div class="mb-3">
+										<label for="prescription" class="col-form-label">Prescription Notes:</label>
+										<textarea class="form-control" id="prescription" name="prescription"></textarea>
+									</div>
+                                    <div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+								<button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+								</form>
+							</div>
+							</div>
+						</div>
+					</div>
+				<!-- End of New Record Modal -->
+
+
+
+
+
       </div>
       <br>
        <div class="rectangle rounded bg-white p-5" style="height:fit-content">
-           <table class="table">
-  <thead>
-    <h1 align="left">Patient's List</h1><br>
-    <button type="button" class="btn btn-dark" style="margin-left: 838px;">New Record</button><br><br>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Action</th>
-      <th scope="col">Action</th>
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><button type="button" class="btn btn-info">Edit</button></td>
-      <td><button type="button" class="btn btn-dark">Delete</button></td>
-      
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button type="button" class="btn btn-info">Edit</button></td>
-      <td><button type="button" class="btn btn-dark">Delete</button></td>
-    </tr>
-   <tr>
-      <th scope="row">3</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button type="button" class="btn btn-info">Edit</button></td>
-      <td><button type="button" class="btn btn-dark">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
+
+
+  <table class="table">
+				<thead>
+					<tr>
+					<th>Date</th>
+					<th>Title</th>
+					<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each medicalRecords}}
+					<tr>
+					<td>{{date}}</td>
+					<td>{{title}}</td>
+					<td>
+						<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordModal{{id}}">Edit</button>
+						<button class="btn btn-danger" onclick="deleteRecord('{{id}}')">Delete</button>
+					</td>
+					</tr>
+
+					<!-- Edit Record Modal -->
+					<div class="modal fade" id="editRecordModal{{this.id}}" tabindex="-1" aria-labelledby="editRecordModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="editRecordModalLabel">Edit Medical Record</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form>
+							<div class="mb-3">
+								<label for="recordTitle" class="form-label">Title</label>
+								<input type="text" class="form-control" id="recordTitle" value="{{this.title}}">
+							</div>
+							<div class="mb-3">
+								<label for="recordDescription" class="form-label">Description</label>
+								<textarea class="form-control" id="recordDescription" rows="3">{{this.description}}</textarea>
+							</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary" onclick="saveRecord('{{this.id}}')">Save changes</button>
+						</div>
+						</div>
+					</div>
+					</div>
+					{{/each}}
+				</tbody>
+				</table>
        </div>
 
   </section>

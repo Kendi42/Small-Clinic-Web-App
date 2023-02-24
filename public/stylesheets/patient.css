@@ -43,6 +43,17 @@ a{
     justify-content: right;
 }
 
+table 
+{
+    table-layout:fixed;
+    width:100%;    
+}
+#tablebtns{
+    display: flex;
+    justify-content: right;
+    justify-content: space-between;
+
+}
 .btn-primary{
     background-color: #2AC5C5 !important;
     border: solid #2AC5C5  !important;

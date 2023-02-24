@@ -98,11 +98,16 @@
 
 				<!-- Displaying the Medical Records-->
 				<table class="table">
+					 <colgroup>
+       					<col span="1" style="width: 30%;">
+       					<col span="1" style="width: 55%;">
+      					 <col span="1" style="width: 15%;">
+    				</colgroup>
 				<thead>
 					<tr>
 					<th>Date Created</th>
 					<th>Title</th>
-					<th>Actions</th>
+					<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -111,8 +116,10 @@
 					<td>{{date}}</td>
 					<td>{{title}}</td>
 					<td>
-						<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordModal{{id}}">Details</button>
-						<button class="btn btn-danger" onclick="deleteRecord('{{id}}')">Delete</button>
+						<div id="tablebtns">
+							<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordModal{{id}}">Details</button>
+							<button class="btn btn-danger" onclick="deleteRecord('{{id}}')">Delete</button>
+						</div>
 					</td>
 					</tr>
 

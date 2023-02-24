@@ -63,11 +63,11 @@ app.get("/", (req, res) => {
   } else res.render("index", { root: __dirname });  // Changed this to index cause thats the first page
 });
 
-app.get("/signin", (req, res) => {
+app.get("/login", (req, res) => {
 	res.render("login");
 });
 
-
+//getting to the doctor's page
 app.post("/user", (req, res) => {
 
   for (let i = 0; i < Users.length; i++) {
@@ -117,13 +117,25 @@ app.post('/patientrecs', urlEncoder, (req,res) => {
   return res.render('reception', { medicalRecords });
 })
 
-//for displaying data on the doctor's page 
-app.post("/doctor", urlEncoder, (req, res) => {
-	console.log("Patient Information",Patients);
-	
+
+//add patient details to doctor's office page 
+app.post("/patients", urlEncoder, (req, res) => {
+
+	/*const patientID = uuid()
+	const checkupDate = new Date().toDateString()
+	const newRecord = req.body
+
+	const completeRecord = {id: patientID, date: checkupDate, ...newRecord}
+
+
+	Patients.push(completeRecord);
+	writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));*/
+
+
 	return res.render('doctor', {Patients})
 
 });
+
 
 app.get("/logout", (req, res) => {
 	req.session.destroy();

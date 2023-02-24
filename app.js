@@ -118,6 +118,7 @@ app.post('/patientrecs', urlEncoder, (req,res) => {
 
 //for displaying data on the doctor's page 
 app.post("/doctor", urlEncoder, (req, res) => {
+	console.log("Patient Information",Patients);
 	
 	return res.render('doctor', {Patients})
 

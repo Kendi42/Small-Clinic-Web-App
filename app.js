@@ -114,6 +114,7 @@ app.post('/patientrecs', urlEncoder, (req,res) => {
   return res.render('reception', { medicalRecords });
 })
 
+//for displaying data on the doctor's page 
 app.post("/patients", urlEncoder, (req, res) => {
 	const patientID = uuid()
 	const checkupDate = new Date().toDateString()

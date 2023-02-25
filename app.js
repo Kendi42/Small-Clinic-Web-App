@@ -12,7 +12,11 @@ const uuid = require('uuid').v4;
 /* ------  Reading from JSON files ----------*/
 const userJSON = "Users.json";
 const patientJSON = "Patients.json";
+const userJSON = "Users.json";
+const patientJSON = "Patients.json";
 
+let rawUsers = readFileSync(userJSON);
+let Users = JSON.parse(rawUsers);
 let rawUsers = readFileSync(userJSON);
 let Users = JSON.parse(rawUsers);
 
@@ -82,6 +86,7 @@ app.get("/signin", (req, res) => {
 // 	}
 // };
 
+//getting to the doctor's page
 app.post("/user", (req, res) => {
   for (let i = 0; i < Users.length; i++) {
   if ((req.body.username == Users[i].username) && (req.body.password == Users[i].password)) {
@@ -363,11 +368,6 @@ app.get("/logout", (req, res, next) => {
 });
 
 
-
-/*--------- Getting Patient Information -----*/
-app.get('/patient-data', (req, res) => {
-  res.send(Patients)
-})
 
 app.listen(PORT, () => console.log(`Server Running at port ${PORT}`));
 

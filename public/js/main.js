@@ -1,5 +1,9 @@
 const server = "http://localhost:4000";
 
+let patientName;
+let patientAge;
+let prescription;
+
 
 
 

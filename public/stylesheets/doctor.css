@@ -42,6 +42,8 @@ a{
     border-radius: 1em;
     margin-top: 0em;
     margin-bottom: 2em;
+
+
 }
 
 #patientinfodiv{
@@ -55,12 +57,15 @@ a{
 
 }
 
+
 .pic{
     height: 150;
     width: 150;
     margin-left: 925;
     margin-top: -112;
 }
+
+
 
 .btn-primary{
     background-color: #2AC5C5 !important;

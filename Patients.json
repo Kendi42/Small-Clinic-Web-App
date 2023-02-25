@@ -2,7 +2,7 @@
   {
     "patientID": "1",
     "patientName": "Daniel Theuri",
-    "patientAge": "21",
+    "patientAge": "22",
     "sex": "M",
     "bloodType": "A+",
     "lastVisit": "21/3/22",
@@ -22,31 +22,72 @@
         "prescription": "Panadol"
       },
       {
-        "id": "bbcbe43e-87bb-4217-92de-1d2d0e2f494d",
-        "date": "Sat Feb 25 2023",
-        "title": "j",
-        "sessionnotes": "jj",
-        "prescription": "jjj"
-      },
-      {
-        "id": "4b246931-96dd-4046-b781-c5542c8ef2f1",
-        "date": "Sat Feb 25 2023",
-        "title": "k",
-        "sessionnotes": "ll",
-        "prescription": "llk"
-      },
-      {
-        "id": "07ae74b9-dac2-4643-8350-fb3d1557717f",
-        "date": "Sat Feb 25 2023",
-        "title": "",
-        "sessionnotes": "",
-        "prescription": ""
-      },
-      {
-        "id": "a1319f71-dfc0-4395-979d-8d2ffb2eeb1f",
+        "id": "a498005d-ec48-4da5-8b7b-afe85179ecba",
         "date": "Sat Feb 25 2023",
         "title": "Headache",
         "sessionnotes": "The patient is in pain",
+        "prescription": "Panadol"
+      }
+    ]
+  },
+  {
+    "patientID": "2",
+    "patientName": "Kendi Anyika",
+    "patientAge": "22",
+    "sex": "F",
+    "bloodType": "A+",
+    "lastVisit": "2/3/22",
+    "medicalRecords": [
+      {
+        "id": "5ccfe3b9-0fae-4922-abcb-8b832ab393ec",
+        "date": "Fri Feb 24 2023",
+        "title": "Anual Checkup and Health Screening 2023",
+        "sessionnotes": "Patient appears to be in good condition",
+        "prescription": "No presctiption"
+      },
+      {
+        "id": "cea69c71-800c-4bd8-bc9d-7f15fb359fc6",
+        "date": "Fri Feb 24 2023",
+        "title": "Chronic Fatigue",
+        "sessionnotes": "The patient is extremely exhausted",
+        "prescription": "Panadol"
+      },
+      {
+        "id": "a498005d-ec48-4da5-8b7b-afe85179ecba",
+        "date": "Sat Feb 25 2023",
+        "title": "Headache",
+        "sessionnotes": "The patient is in pain",
+        "prescription": "Panadol"
+      },
+      {
+        "id": "1ba99fea-4dd8-49bb-8601-839577e0d3b9",
+        "date": "Sat Feb 25 2023",
+        "title": "Weekly checkup",
+        "sessionnotes": "Patient appears to be in good health",
+        "prescription": "No prescription "
+      }
+    ]
+  },
+  {
+    "patientID": "3",
+    "patientName": "Alexis Obel",
+    "patientAge": "21",
+    "sex": "F",
+    "bloodType": "A+",
+    "lastVisit": "1/3/22",
+    "medicalRecords": [
+      {
+        "id": "5ccfe3b9-0fae-4922-abcb-8b832ab393ec",
+        "date": "Fri Feb 24 2023",
+        "title": "Anual Checkup and Health Screening 2023",
+        "sessionnotes": "Patient appears to be in good condition",
+        "prescription": "No presctiption"
+      },
+      {
+        "id": "cea69c71-800c-4bd8-bc9d-7f15fb359fc6",
+        "date": "Fri Feb 24 2023",
+        "title": "Chronic Fatigue",
+        "sessionnotes": "The patient is extremely exhausted",
         "prescription": "Panadol"
       },
       {

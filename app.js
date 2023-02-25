@@ -77,10 +77,14 @@ app.post("/user", (req, res) => {
     session = req.session;
     session.userid = Users[i].username;
     console.log(req.session);
-    console.log(Users[i].username)
+    console.log(Users[i].username);
+    
     // Linking to the Doctors page. If role is doctor. Roles not implemented yet
+    //passing the users name to display on the welcome page if they are a doctor
+    const user = Users.find(user => user.username === Users[i].username);
+    console.log("Specific User information", user);
     console.log("Patient information", Patients);
-    return res.render('doctor', {Patients});
+    return res.render('doctor', {user, Patients});
   } 
 }
 return res.send("Invalid username or password");

@@ -156,9 +156,13 @@ app.delete('/patients/:id', (req, res) => {
 });
 
 app.get('/backToDoctor', (req, res) => {
-  // Redirect to a new page
+  // Redirect back to doctors page
+  const user = Users.find(user => user.username === session.userid);
+  console.log("Specific User information", user);
+  const todaysDate= new Date().toDateString();
+  console.log("Todays Date", todaysDate);
   console.log("Patient information from Back to Doctor", Patients);
-  return res.render('doctor', {Patients});
+  return res.render('doctor', {user, todaysDate, Patients});
 });
 
 

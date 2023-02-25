@@ -72,7 +72,6 @@ app.get('/login', (req, res) => {
 });
 
 app.post("/user", (req, res) => {
-
   for (let i = 0; i < Users.length; i++) {
   if ((req.body.username == Users[i].username) && (req.body.password == Users[i].password)) {
     session = req.session;
@@ -148,6 +147,12 @@ app.delete('/patients/:id', (req, res) => {
     console.log("Updated medical Records", medicalRecords);
     return res.render('patient', {patient, medicalRecords});
   }
+});
+
+app.get('/backToDoctor', (req, res) => {
+  // Redirect to a new page
+  console.log("Patient information from Back to Doctor", Patients);
+  return res.render('doctor', {Patients});
 });
 
 

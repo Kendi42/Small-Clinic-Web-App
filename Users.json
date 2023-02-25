@@ -1,19 +1,19 @@
 [
     {
         "username": "kendianyika",
-        "name": "Kendi",
+        "name": "Kendi Anyika",
         "password": "1234",
         "role": "Doctor"
     },
     {
         "username": "alexisobel",
-        "name": "Alexis",
+        "name": "Alexis Obel",
         "password": "12345",
         "role": "Doctor"
     },
     {
         "username": "danieltheuri",
-        "name": "Daniel",
+        "name": "Daniel Theuri",
         "password": "123",
         "role": "Receptionist"
     }

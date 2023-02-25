@@ -1,9 +1,9 @@
 [
   {
     "patientID": "1",
-    "patientName": "Daniel Theuri",
+    "patientName": "Daniel Theuri James",
     "patientAge": "22",
-    "sex": "M",
+    "sex": "",
     "bloodType": "A+",
     "phone": "0710101010",
     "medicalRecords": [
@@ -91,12 +91,16 @@
     "patientAge": "203",
     "sex": "F",
     "bloodType": "O+",
-    "phone": "0720202020"
-  },
-  {
-    "patientID": "a6ba4566-463c-4414-9502-d8af7362fac5",
-    "bloodType": "O+",
-    "phone": "92032394304"
+    "phone": "0720202020",
+    "medicalRecords": [
+      {
+        "id": "271fc025-1572-4301-8aa9-edbf0ce9c5eb",
+        "date": "Sat Feb 25 2023",
+        "title": "Pain",
+        "sessionnotes": "Pain",
+        "prescription": "Panadol"
+      }
+    ]
   },
   {
     "patientID": "1d97d9ba-7359-49a6-8398-f33a1f553435",

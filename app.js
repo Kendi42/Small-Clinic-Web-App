@@ -12,13 +12,11 @@ const uuid = require('uuid').v4;
 /* ------  Reading from JSON files ----------*/
 const userJSON = "Users.json";
 const patientJSON = "Patients.json";
-const userJSON = "Users.json";
-const patientJSON = "Patients.json";
+
 
 let rawUsers = readFileSync(userJSON);
 let Users = JSON.parse(rawUsers);
-let rawUsers = readFileSync(userJSON);
-let Users = JSON.parse(rawUsers);
+
 
 let rawPatients = readFileSync(patientJSON);
 let Patients = JSON.parse(rawPatients);

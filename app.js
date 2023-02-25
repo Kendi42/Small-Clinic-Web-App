@@ -291,7 +291,7 @@ app.delete("/patients/:id", (req, res) => {
 });
 
 /*-------------Editing-----------------*/
-app.post("/patients/reception/:patientID", (req, res) => {
+app.post("/receptionist/patients/:patientID", (req, res) => {
 	console.log("Inside update post method");
 	let { patientID } = req.params;
 	console.log("Patient ID", patientID);

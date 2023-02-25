@@ -1,9 +1,9 @@
 [
   {
     "patientID": "1",
-    "patientName": "Daniel Theuri",
+    "patientName": "Daniel Theuri James",
     "patientAge": "22",
-    "sex": "M",
+    "sex": "",
     "bloodType": "A+",
     "phone": "0710101010",
     "medicalRecords": [

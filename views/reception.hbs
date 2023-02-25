@@ -23,6 +23,14 @@
         <a class="navbar-brand" href="#">
           <img src="../public/imgs/logo.svg" alt="logo" width="40" height="40" align="left">
           <h3>MEDITECH</h3>
+          
+          <!--moved login button to nav-->
+          <div id="logoutbtndiv">
+          <form action="/logout" method="GET" style="margin-left: 1110px; margin-top:-38px; margin-bottom: 1em">
+            <button type="submit" class="btn btn-dark" >Logout</button>
+          </form>
+
+        </div>
       </div>
     </nav>
     <!--div class="box1">
@@ -43,18 +51,18 @@
            <img src="../imgs/doctor.svg" class="pic"alt="logo" width="70" height="60" align="right"-->
         </div>
 
-        <!-- Button trigger New Record modal -->
+        <!-- Button trigger New Record modal >
         <div id="logoutbtndiv">
           <form action="/logout" method="GET">
             <button type="submit" class="btn btn-primary">Logout</button>
           </form>
 
-        </div>
+        </div-->
 
-        <div id="newrecordbtndiv">
+        <!--div id="newrecordbtndiv">
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newrecordmodal">New
             Record</button>
-        </div>
+        </div-->
 
         <!-- New Record Modal -->
         <div class="modal fade" id="newrecordmodal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -104,8 +112,10 @@
       </div>
       <br>
       <div class="rectangle rounded bg-white p-5" style="height:fit-content">
-
-
+             <div id="newrecordbtndiv">
+          <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#newrecordmodal" style="margin-left: 600px; margin-bottom:2em">New
+            Record</button>
+        </div>
 
         <table class="table">
           <thead>

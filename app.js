@@ -133,7 +133,7 @@ app.post("/patients/:patientid" , (req, res) => {
 app.post("/patients/:patientid/newrecord", urlEncoder, (req,res) => {
   const { patientid } = req.params;
   const recordID = uuid();
-  const dateCreated = new Date().toDateString();
+  const phone = new Date().toDateString();
   const newRecord = req.body;
   console.log("Medical record", newRecord);
 
@@ -222,43 +222,13 @@ app.get('/backToDoctor', (req, res) => {
   return res.render('doctor', {user, todaysDate, Patients});
 });
 
-// app.get("/reception", (req, res) => {
-// 	res.send(Patients);
-// });
 
-// app.post('/patientrecs', urlEncoder, (req,res) => {
-//   const patientID = "1";
-//   const recordID = uuid();
-//   const dateCreated = new Date().toDateString();
-//   const newRecord = req.body;
-//   console.log("Medical record", newRecord);
-//   console.log("Patients", Patients);
-
-//   // find the patient with the matching ID
-//   const patient = Patients.find(patient => patient.patientID === patientID);
-//   console.log("Patient constant", Patients.find(patient => patient.patientID === patientID));
-
-//   // Adding in the record id and date 
-//   const completerecord = { id: recordID, date: dateCreated, ...newRecord};
-
-
-//   // add the new medical record to the patient's "medicalRecords" array
-//   patient.medicalRecords.push(completerecord);
-//   console.log("After Record has been added", patient);
-//   writeFileSync(patientJSON, JSON.stringify(Patients,null,2));
-
-//   // Getting all the patient medical records to update the display on the screen
-//   const medicalRecords = patient.medicalRecords;
-//   console.log("Medical Records", medicalRecords); 
-//   return res.render('reception', { medicalRecords });
-// })
 
 app.post("/patients", urlEncoder, (req, res) => {
 	const patientID = uuid()
-	const checkupDate = new Date().toDateString()
 	const newRecord = req.body
 
-	const completeRecord = {patientID: patientID, date: checkupDate, ...newRecord}
+	const completeRecord = {patientID: patientID, ...newRecord}
 
 
 	Patients.push(completeRecord);
@@ -308,18 +278,19 @@ app.delete("/patients/:id", (req, res) => {
 });
 
 /*-------------Editing-----------------*/
-app.post("/patients/:patientID", (req, res) => {
+app.post("/patients/reception/:patientID", (req, res) => {
 	console.log("Inside update post method");
 	const { patientID } = req.params;
 	console.log("Patient ID", patientID);
 
-	const { updatedName, updatedAge, updatedSex, updatedBloodType } = req.body;
+	const { updatedName, updatedAge, updatedSex, updatedBloodType, updatedPhone } = req.body;
 	console.log(
 		"Updated Information",
 		updatedName,
 		updatedAge,
 		updatedSex, 
-    updatedBloodType
+    updatedBloodType,
+    updatedPhone
 	);
 
 	const patient = Patients.find((patient) => patient.patientID === patientID);

@@ -5,3 +5,62 @@ body{
     background-color: #F5F5F5 !important;
    
 }
+
+#content{
+    width:90vw;
+    margin: 0 auto;
+}
+
+#receptionistname{
+    /*font-size: 70px;*/
+    text-align: left;
+    font-size: 40px;
+    margin-left: 0.001em;
+}
+
+#date{
+    text-align: left;
+    font-size: 20px;
+    margin-left: 0.001em;
+    margin-top: 0.1em;
+    
+}
+
+#receptioninfodiv .rpic{
+    height: 50;
+    width: 50;
+    margin-left: 925;
+    margin-top: -112;
+}
+
+#receptioninfodiv{
+    display: inline-block;
+    color:#000000;
+    background-color:white;
+    padding:2.5em;
+    border-radius: 1em;
+    margin-top: 0em;
+    margin-bottom: 2em;
+    width: 100%;
+
+}
+
+#newrecordbtndiv{
+    margin-bottom: 1em;
+}
+
+#patientinfodiv{
+    color:#000000;
+    background-color:white;
+    padding:2.5em;
+    border-radius: 1em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    display:block;
+}
+
+#patientinfodiv h2{
+    text-align: left;
+    margin-bottom: 1.2em;
+}
+

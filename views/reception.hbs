@@ -26,7 +26,7 @@
           
           <!--moved login button to nav-->
           <div id="logoutbtndiv">
-          <form action="/logout" method="GET" style="margin-left: 1110px; margin-top:-38px; margin-bottom: 1em">
+          <form action="/logout" method="GET" style="margin-left: 1140px; margin-top:-38px; margin-bottom: 1em">
             <button type="submit" class="btn btn-dark" >Logout</button>
           </form>
 
@@ -112,6 +112,7 @@
       </div>
       <br>
       <div class="rectangle rounded bg-white p-5" style="height:fit-content">
+       <h2 style="text-align: left; margin-bottom: 1.2em;">Patient List</h2>
              <div id="newrecordbtndiv">
           <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#newrecordmodal" style="margin-left: 600px; margin-bottom:2em">New
             Record</button>
@@ -131,9 +132,9 @@
               <td>{{date}}</td>
               <td>{{patientName}}</td>
               <td>
-                <button class="btn btn-primary" data-bs-toggle="modal"
+                <button class="btn btn-info" data-bs-toggle="modal"
                   data-bs-target="#editRecordModal{{patientID}}">Edit</button>
-                <button class="btn btn-danger" onclick="deletePatient('{{patientID}}')">Delete</button>
+                <button class="btn btn-dark" onclick="deletePatient('{{patientID}}')">Delete</button>
 
               </td>
             </tr>
@@ -166,8 +167,8 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary">Save changes</button>
+							<button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-info">Save changes</button>
 						</div>
 						</form>
 						</div>

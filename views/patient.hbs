@@ -118,7 +118,8 @@
 					<td>
 						<div id="tablebtns">
 							<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordModal{{id}}">Details</button>
-							<button class="btn btn-danger" onclick="deleteRecord('{{id}}')">Delete</button>
+							
+							<button class="btn btn-danger" onclick="deleteRecord('{{../patient.patientID}}', '{{this.id}}')">Delete</button>
 						</div>
 					</td>
 					</tr>

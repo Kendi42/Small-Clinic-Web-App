@@ -68,9 +68,11 @@ function populateRecords(medicalRecords) {
 	});
   }
 //Deleting a Row
-function deleteRecord(recordID){
+function deleteRecord(patientID, recordID){
 	console.log("Record ID from delte", recordID);
-	fetch(`/patients/${recordID}`, {
+	console.log("PatientID from delte", patientID);
+
+	fetch(`/patients/${patientID}/${recordID}`, {
 		method: 'DELETE'
 	  })
 	  .then((response) => {

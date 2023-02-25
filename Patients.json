@@ -8,34 +8,6 @@
     "lastVisit": "21/3/22",
     "medicalRecords": [
       {
-        "id": "d1c39f54-9280-49bb-b817-91b174659075",
-        "date": "Sat Feb 25 2023",
-        "title": "Annual Check up",
-        "sessionnotes": "Patient appears to be in good health",
-        "prescription": "No prescription"
-      },
-      {
-        "id": "a70636a9-0667-48af-b31e-f73284381153",
-        "date": "Sat Feb 25 2023",
-        "title": "Chronic Fatigue",
-        "sessionnotes": "Tired",
-        "prescription": "Panadol"
-      },
-      {
-        "id": "5a324661-77bd-4219-843a-07033a02e9d1",
-        "date": "Sat Feb 25 2023",
-        "title": "Pain",
-        "sessionnotes": "Pain",
-        "prescription": "Panadol"
-      },
-      {
-        "id": "ae397672-953e-4ca4-95c4-1a820767effd",
-        "date": "Sat Feb 25 2023",
-        "title": "Stomach pain",
-        "sessionnotes": "Pain",
-        "prescription": "Panadol"
-      },
-      {
         "id": "497c3e62-b036-4878-98c0-816af2201eae",
         "date": "Sat Feb 25 2023",
         "title": "Ailment",
@@ -60,20 +32,6 @@
     "lastVisit": "2/3/22",
     "medicalRecords": [
       {
-        "id": "5ccfe3b9-0fae-4922-abcb-8b832ab393ec",
-        "date": "Fri Feb 24 2023",
-        "title": "Anual Checkup and Health Screening 2023",
-        "sessionnotes": "Patient appears to be in good condition",
-        "prescription": "No presctiption"
-      },
-      {
-        "id": "cea69c71-800c-4bd8-bc9d-7f15fb359fc6",
-        "date": "Fri Feb 24 2023",
-        "title": "Chronic Fatigue",
-        "sessionnotes": "The patient is extremely exhausted",
-        "prescription": "Panadol"
-      },
-      {
         "id": "a498005d-ec48-4da5-8b7b-afe85179ecba",
         "date": "Sat Feb 25 2023",
         "title": "Headache",
@@ -97,13 +55,6 @@
     "bloodType": "A+",
     "lastVisit": "1/3/22",
     "medicalRecords": [
-      {
-        "id": "5ccfe3b9-0fae-4922-abcb-8b832ab393ec",
-        "date": "Fri Feb 24 2023",
-        "title": "Anual Checkup and Health Screening 2023",
-        "sessionnotes": "Patient appears to be in good condition",
-        "prescription": "No presctiption"
-      },
       {
         "id": "cea69c71-800c-4bd8-bc9d-7f15fb359fc6",
         "date": "Fri Feb 24 2023",

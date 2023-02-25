@@ -132,15 +132,14 @@ app.post("/patients/:patientid/newrecord", urlEncoder, (req,res) => {
 });
 
 /* --------- Deleting Medical records --------*/
-app.delete('/patients/:id', (req, res) => {
+app.delete('/patients/:patientID/:id', (req, res) => {
   console.log("Inside app delete");
   // Get the patient 
-  const patientID = "1";
+  const { patientID, id }= req.params;
   const patient= Patients.find(patient => patient.patientID === patientID);
   const patientIndex = Patients.findIndex(patient => patient.patientID === patientID);
   console.log("Patient Index", patientIndex);
   // Get the record to be deleted
-  const { id }= req.params;
   const recordIndex = Patients[patientIndex].medicalRecords.findIndex(
     (record) => record.id === id);
   console.log("RecordIndex", recordIndex);

@@ -51,7 +51,10 @@
 					<td>{{lastVisit}}</td>
           
 					<td>
-						<button class="btn btn-primary" onclick="patientPage('{{patientID}}')">View</button>
+            <form action="patients/{{patientID}}" method="POST">
+              <button type="submit" class="btn btn-primary">View</button>
+              <!--button class="btn btn-primary" onclick="patientPage('{{patientID}}')">View</button-->
+            </form>
 					</td>
 					</tr>
 					 {{/each}}

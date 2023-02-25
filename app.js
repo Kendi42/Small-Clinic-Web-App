@@ -56,8 +56,10 @@ app.use(
   })
 );
 
-/* --------- Logging In --------*/
+app.use(express.static(path.join(__dirname, 'public'), {type: 'text/css'}));
 
+
+/* --------- Logging In --------*/
 app.get("/", (req, res) => {
   session = req.session;
   if (session.userid) {
@@ -66,8 +68,8 @@ app.get("/", (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  res.render('login')
-})
+  res.render('login');
+});
 
 app.post("/user", (req, res) => {
 
@@ -77,32 +79,38 @@ app.post("/user", (req, res) => {
     session.userid = Users[i].username;
     console.log(req.session);
     console.log(Users[i].username)
-    // Linking to the Doctors page
+    // Linking to the Doctors page. If role is doctor. Roles not implemented yet
     console.log("Patient information", Patients);
     return res.render('doctor', {Patients});
-
-    // When going to patient page. Ideally this should be from the doctors page. It is just here for now
-    // Loading the patient medical records when the patient page loads
-    //const patientID = "1";
-    //const patient = Patients.find(patient => patient.patientID === patientID);
-    //const medicalRecords = patient.medicalRecords;
-    //return res.render('patient', {patient, medicalRecords});
   } 
 }
 return res.send("Invalid username or password");
 });
 
+/* --------- Going From Doctors page to Patients page --------*/
+app.post("/patients/:patientid" , (req, res) => {
+  // Loading the patient medical records when the patient page loads
+  console.log("In app.post method");
+  const { patientid } = req.params;
+  console.log("patientID", patientid)
+  const patient = Patients.find(patient => patient.patientID === patientid);
+  console.log("Patient Info",patient)
+  const medicalRecords = patient.medicalRecords;
+  console.log("Patient Med recs", medicalRecords);
+  return res.render('patient', {patient, medicalRecords});
+});
+
 /* --------- Patients page and adding Medical records --------*/
-app.post('/patients', urlEncoder, (req,res) => {
-  const patientID = "1";
+app.post("/patients/:patientid/newrecord", urlEncoder, (req,res) => {
+  const { patientid } = req.params;
   const recordID = uuid();
   const dateCreated = new Date().toDateString();
   const newRecord = req.body;
   console.log("Medical record", newRecord);
 
   // find the patient with the matching ID
-  const patient = Patients.find(patient => patient.patientID === patientID);
-  console.log("Patient constant", Patients.find(patient => patient.patientID === patientID));
+  const patient = Patients.find(patient => patient.patientID === patientid);
+  console.log("Patient constant", Patients.find(patient => patient.patientID === patientid));
 
   // Adding in the record id and date 
   const completerecord = { id: recordID, date: dateCreated, ...newRecord};
@@ -115,7 +123,7 @@ app.post('/patients', urlEncoder, (req,res) => {
   // Getting all the patient medical records to update the display on the screen
   const medicalRecords = patient.medicalRecords;
   console.log("Medical Records", medicalRecords); 
-  return res.render('patient', { medicalRecords });
+  return res.render('patient', { patient, medicalRecords });
 });
 
 /* --------- Deleting Medical records --------*/
@@ -141,6 +149,7 @@ app.delete('/patients/:id', (req, res) => {
     return res.render('patient', {patient, medicalRecords});
   }
 });
+
 
 app.get("/logout", (req, res) => {
   req.session.destroy();

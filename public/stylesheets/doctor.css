@@ -36,10 +36,10 @@ a{
     border-radius: 1em;
     margin-top: 5em;
     margin-bottom: 2em;
-
-
 }
-
+form{
+    margin:0;
+}
 
 .pic{
     

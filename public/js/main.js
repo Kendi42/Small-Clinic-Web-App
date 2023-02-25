@@ -50,3 +50,38 @@ function populateContent(patients) {
 		let textAge = document.createTextNode(patients.patientAge);
 	});
 }
+
+
+// function deleteRecord(recordID) {
+// 	// Send DELETE request to server
+// 	fetch(`/patients/${recordID}`, {
+// 		method: "DELETE",
+// 	})
+// 		.then((response) => {
+// 			// Remove the table row from the DOM
+// 			const row = document.getElementById(`record-${recordID}`);
+// 			if (row) {
+// 				row.remove();
+// 			}
+// 		})
+// 		.catch((error) => {
+// 			console.error("Error deleting record:", error);
+// 		});
+// }
+
+
+function deletePatient(patientID) {
+	fetch(`/patients/${patientID}`, {
+		method: "DELETE",
+	})
+		.then((response) => {
+			//Remove the table from the DOM 
+			const row = document.getElementById(`patient-${patientID}`)
+			if (row) {
+				row.remove();
+			}
+		})
+		.catch((error) => {
+			console.error("Error deleting patient:", error);
+		});
+}

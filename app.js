@@ -133,7 +133,7 @@ app.post("/patients/:patientid" , (req, res) => {
 app.post("/patients/:patientid/newrecord", urlEncoder, (req,res) => {
   const { patientid } = req.params;
   const recordID = uuid();
-  const phone = new Date().toDateString();
+  const dateCreated = new Date().toDateString();
   const newRecord = req.body;
   console.log("Medical record", newRecord);
 

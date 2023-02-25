@@ -19,12 +19,28 @@ a{
     color: #000000 !important;
 }
 
+#doctorname{
+    text-align: left;
+    font-size: 40px;
+    margin-left: 0.001em;
+
+}
+
+#date{
+    text-align: left;
+    font-size: 20px;
+    margin-left: 0.001em;
+    margin-top: 0.1em;
+    
+}
+
 #doctorinfodiv{
+    display: inline-block;
     color:#000000;
     background-color:white;
     padding:2.5em;
     border-radius: 1em;
-    margin-top: 10em;
+    margin-top: 0em;
     margin-bottom: 2em;
 
 
@@ -35,38 +51,21 @@ a{
     background-color:white;
     padding:2.5em;
     border-radius: 1em;
-    margin-top: 5em;
+    margin-top: 1em;
     margin-bottom: 2em;
-
+    display:block;
 
 }
 
 
 .pic{
-    
-    height: 260;
-    width: 260;
-    margin-left: 1350;
-    margin-top: -168;
-}
-#patientname{
-    font-size: 3em;
-    font-weight: 600;
+    height: 150;
+    width: 150;
+    margin-left: 925;
+    margin-top: -112;
 }
 
-#leftinfo, #rightinfo{
-    font-size: 1.2em;
-    padding-left: 2.5em;  
 
-}
-#leftinfo{
-    border-right: solid #ffffff;
-}
-
-#newrecordbtndiv{
-    display: flex;
-    justify-content: right;
-}
 
 .btn-primary{
     background-color: #2AC5C5 !important;
@@ -79,9 +78,6 @@ a{
 
 }
 
-textarea{
-    height:25vh; 
-}
 
 @media (max-width: 767.98px) { 
     #leftinfo, #rightinfo{
@@ -107,7 +103,3 @@ textarea{
     }
     
  }
-
-
-
-

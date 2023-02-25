@@ -27,6 +27,20 @@
         "title": "Erectile Dysfunction",
         "sessionnotes": "Marriage will fall apart soon. Get a good divorce lawyer. Wife is probably cheating with the neighbor.",
         "prescription": "Viagra"
+      },
+      {
+        "id": "343b35dc-4e5c-4b7b-aa15-258b23716893",
+        "date": "Sat Feb 25 2023",
+        "title": "Pain",
+        "sessionnotes": "Pain",
+        "prescription": "Panadol"
+      },
+      {
+        "id": "21164aac-fc3f-48ce-b1cf-c618a03f0b93",
+        "date": "Sat Feb 25 2023",
+        "title": "So much Pain",
+        "sessionnotes": "Pain",
+        "prescription": "Panadol"
       }
     ]
   },
@@ -76,7 +90,16 @@
     "patientName": "Harriet Tubman",
     "patientAge": "203",
     "sex": "F",
-    "bloodType": "O+", 
-    "phone": "0720202020"
+    "bloodType": "O+",
+    "phone": "0720202020",
+    "medicalRecords": [
+      {
+        "id": "9be32a4f-9644-48ae-a07d-a8c6a867aef5",
+        "date": "Sat Feb 25 2023",
+        "title": "Annual Checkup",
+        "sessionnotes": "Patient appears to be in good health",
+        "prescription": "No prescription"
+      }
+    ]
   }
 ]

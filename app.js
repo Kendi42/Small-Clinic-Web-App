@@ -144,15 +144,28 @@ app.post("/patients/:patientid/newrecord", urlEncoder, (req,res) => {
   // Adding in the record id and date 
   const completerecord = { id: recordID, date: dateCreated, ...newRecord};
 
-  // add the new medical record to the patient's "medicalRecords" array
-  patient.medicalRecords.push(completerecord);
-  console.log("After Record has been added", patient);
-  writeFileSync(patientJSON, JSON.stringify(Patients,null,2));
+  if (typeof patient.medicalRecords !== 'undefined' && Array.isArray(patient.medicalRecords)) {
+    console.log("Medical Records Exist")
+      // add the new medical record to the patient's "medicalRecords" array
+    patient.medicalRecords.push(completerecord);
+    console.log("After Record has been added", patient);
+    writeFileSync(patientJSON, JSON.stringify(Patients,null,2));
 
-  // Getting all the patient medical records to update the display on the screen
-  const medicalRecords = patient.medicalRecords;
-  console.log("Medical Records", medicalRecords); 
-  return res.render('patient', { patient, medicalRecords });
+    // Getting all the patient medical records to update the display on the screen
+    const medicalRecords = patient.medicalRecords;
+    console.log("Medical Records", medicalRecords); 
+    return res.render('patient', { patient, medicalRecords });
+  }
+  else{
+    console.log("Med Recs Dont exist")
+    patient.medicalRecords = [completerecord];
+    console.log("After Med REcs created and Record has been added", patient);
+    writeFileSync(patientJSON, JSON.stringify(Patients,null,2));
+    // Getting all the patient medical records to update the display on the screen
+    const medicalRecords = patient.medicalRecords;
+    console.log("Medical Records", medicalRecords); 
+    return res.render('patient', { patient, medicalRecords });
+  }
 });
 
 /* --------- Deleting Medical records --------*/

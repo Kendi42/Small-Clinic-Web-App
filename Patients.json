@@ -22,13 +22,6 @@
         "prescription": "No prescription"
       },
       {
-        "id": "86507991-5e20-4d02-8177-4dc1c41c8825",
-        "date": "Sat Feb 25 2023",
-        "title": "Erectile Dysfunction",
-        "sessionnotes": "Marriage will fall apart soon. Get a good divorce lawyer. Wife is probably cheating with the neighbor.",
-        "prescription": "Viagra"
-      },
-      {
         "id": "343b35dc-4e5c-4b7b-aa15-258b23716893",
         "date": "Sat Feb 25 2023",
         "title": "Pain",
@@ -97,17 +90,26 @@
         "id": "271fc025-1572-4301-8aa9-edbf0ce9c5eb",
         "date": "Sat Feb 25 2023",
         "title": "Pain",
-        "sessionnotes": "Pain",
+        "sessionnotes": "Pain a lot\r\n",
         "prescription": "Panadol"
       }
     ]
   },
   {
-    "patientID": "1d97d9ba-7359-49a6-8398-f33a1f553435",
-    "patientName": "David Silva",
-    "patientAge": "32",
-    "sex": "M",
-    "bloodType": "B-",
-    "phone": "34234324435"
+    "patientID": "b9325ea0-91be-4b32-91dd-7df5be53c94c",
+    "patientName": "Ann",
+    "patientAge": "25",
+    "sex": "F",
+    "bloodType": "A+",
+    "phone": "0700112233",
+    "medicalRecords": [
+      {
+        "id": "561ce7e8-f7e5-44bb-be3a-1d2b47e7ac12",
+        "date": "Sat Feb 25 2023",
+        "title": "Pain",
+        "sessionnotes": "A lot of pain",
+        "prescription": "Panadol"
+      }
+    ]
   }
 ]

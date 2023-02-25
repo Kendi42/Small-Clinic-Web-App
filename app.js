@@ -74,17 +74,6 @@ app.get("/signin", (req, res) => {
 });
 
 
-// const checkAuthenticated = (req, res, next) => {
-// 	if (req.session && req.session.user) {
-// 		// User is authenticated, allow access to the requested route.
-// 		return next();
-// 	} else {
-// 		// User is not authenticated, redirect to login page.
-// 		res.redirect("/");
-// 	}
-// };
-
-//getting to the doctor's page
 app.post("/user", (req, res) => {
   for (let i = 0; i < Users.length; i++) {
   if ((req.body.username == Users[i].username) && (req.body.password == Users[i].password)) {
@@ -241,39 +230,19 @@ app.post("/patients", urlEncoder, (req, res) => {
 	const patientID = uuid()
 	const newRecord = req.body
 
-	const completeRecord = {patientID: patientID, ...newRecord}
+	const completeRecord = {patientID: patientID, ...newRecord};
+  const todaysDate= new Date().toDateString();
+
 
 
 	Patients.push(completeRecord);
 	writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
 
 
-	return res.render('reception', {Patients})
+	return res.render('reception', {Patients, todaysDate});
 
 });
 
-
-// /* --------- Deleting Medical records --------*/
-// app.delete("/patients/:id", (req, res) => {
-// 	const patientID = "1";
-// 	const patient = Patients.find((patient) => patient.patientID === patientID);
-// 	const patientIndex = Patients.findIndex(
-// 		(patient) => patient.patientID === patientID
-// 	);
-// 	const { id } = req.params;
-// 	const recordIndex = Patients[patientIndex].findIndex(
-// 		(record) => record.id === id
-// 	);
-
-// 	if (recordIndex !== -1) {
-// 		Patients[patientIndex].splice(recordIndex, 1);
-// 		writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
-// 		let medicalRecords = patient.medicalRecords.filter(
-// 			(record) => record.id !== id
-// 		);
-// 		return res.render("patient", { patient, medicalRecords });
-// 	}
-// });
 
 app.delete("/patients/:id", (req, res) => {
 	const { id } = req.params;
@@ -293,6 +262,8 @@ app.delete("/patients/:id", (req, res) => {
 /*-------------Editing-----------------*/
 app.post("/receptionist/patients/:patientID", (req, res) => {
 	console.log("Inside update post method");
+  const todaysDate= new Date().toDateString();
+  console.log("Todays Date", todaysDate);
 	let { patientID } = req.params;
 	console.log("Patient ID", patientID);
 
@@ -322,7 +293,7 @@ app.post("/receptionist/patients/:patientID", (req, res) => {
 		writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
 		console.log("Record Updated");
 		console.log("Updated Patient", patient);
-		return res.render("reception", { Patients });
+		return res.render("reception", { Patients, todaysDate});
 	}
 });
 

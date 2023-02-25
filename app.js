@@ -114,13 +114,7 @@ app.post("/user", (req, res) => {
   } 
 }
 
-app.get("/user", checkAuthenticated, (req, res) => {
-	// This route is only accessible to authenticated users.
-	res.send("You are authenticated!");
-});
 
-return res.send("Invalid username or password");
-});
 
 /* --------- Going From Doctors page to Patients page --------*/
 app.post("/patients/:patientid" , (req, res) => {

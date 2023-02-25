@@ -101,7 +101,7 @@ app.post("/patients/:patientid" , (req, res) => {
 });
 
 /* --------- Patients page and adding Medical records --------*/
-app.post("/newrecord", urlEncoder, (req,res) => {
+app.post("/patients/:patientid/newrecord", urlEncoder, (req,res) => {
   const { patientid } = req.params;
   const recordID = uuid();
   const dateCreated = new Date().toDateString();

@@ -85,3 +85,15 @@ function deletePatient(patientID) {
 			console.error("Error deleting patient:", error);
 		});
 }
+
+function editPatient(patientID) {
+	fetch(`/patients/${patientID}`, {
+		method: "POST",
+	})
+	.then((response) => {
+
+	})
+	.catch((error) => {
+		console.log("Error deleting patient:", error)
+	})
+}

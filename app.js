@@ -233,9 +233,8 @@ app.post("/patients/:patientID", (req, res) => {
 		console.log(Patients);
 		writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
 		console.log("Record Updated");
-		const patient = patient;
 		console.log("Updated Patient", patient);
-		return res.render("patient", { patient });
+		return res.render("reception", { Patients });
 	}
 });
 

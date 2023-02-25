@@ -8,7 +8,10 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-  </script>
+    </script>
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+
   <title>Reception</title>
 </head>
 
@@ -31,58 +34,139 @@
     <div class="container" style="text-align: center;">
       <div class="rectangle rounded bg-white p-5" style="height:fit-content; width: fit-content;">
         <div class="rectangle rounded bg-white p-5">
-           <h1 align="left" style="font-size: 70px;"><span style="color:#2AC5C5; font: size 70px;">Reception</span> Desk</h1>
-          <h6 class="display-6" align="left">Todays Date: 06/02/2023</h6>
-             <img src="../public/imgs/reception.svg" width="300" height="300" style="margin-left: 800px; margin-top: -200px">
+          <h1 align="left" style="font-size: 70px;"><span style="color:#2AC5C5; font: size 70px;">Reception</span> Desk
+          </h1>
+          <h6 class="display-6" align="left">{{todaysDate}}</h6>
+          <img src="../public/imgs/reception.svg" width="300" height="300"
+            style="margin-left: 800px; margin-top: -200px">
           <!--h6 align="left" class="display-6">Todays Date: 06/02/2023</h6>
            <img src="../imgs/doctor.svg" class="pic"alt="logo" width="70" height="60" align="right"-->
         </div>
+
+        <!-- Button trigger New Record modal -->
+        <div id="logoutbtndiv">
+          <form action="/logout" method="GET">
+            <button type="submit" class="btn btn-primary">Logout</button>
+          </form>
+
+        </div>
+
+        <div id="newrecordbtndiv">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newrecordmodal">New
+            Record</button>
+        </div>
+
+        <!-- New Record Modal -->
+        <div class="modal fade" id="newrecordmodal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="ModalLabel">New Patient Information</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="/patients" method="POST">
+                  <div class="mb-3">
+                    <label for="patientName" class="col-form-label">Patient Name:</label>
+                    <input id="patientName" name="patientName" type="text" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="patientAge" class="col-form-label">Patient Age:</label>
+                    <textarea id="patientAge" name="patientAge" class="form-control"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="Sex" class="col-form-label">Sex:</label>
+                    <textarea class="form-control" id="Sex" name="Sex"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="Sex" class="col-form-label">Blood Type:</label>
+                    <textarea class="form-control" id="bloodType" name="bloodType"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of New Record Modal -->
+
+
+
+
+
       </div>
       <br>
-       <div class="rectangle rounded bg-white p-5" style="height:fit-content">
-           <table class="table">
-  <thead>
-    <h1 align="left">Patient's List</h1><br>
-    <button type="button" class="btn btn-dark" style="margin-left: 838px;">New Record</button><br><br>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Action</th>
-      <th scope="col">Action</th>
+      <div class="rectangle rounded bg-white p-5" style="height:fit-content">
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><button type="button" class="btn btn-info">Edit</button></td>
-      <td><button type="button" class="btn btn-dark">Delete</button></td>
-      
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button type="button" class="btn btn-info">Edit</button></td>
-      <td><button type="button" class="btn btn-dark">Delete</button></td>
-    </tr>
-   <tr>
-      <th scope="row">3</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button type="button" class="btn btn-info">Edit</button></td>
-      <td><button type="button" class="btn btn-dark">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
-       </div>
+
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Patient Name</th>
+          
+            </tr>
+          </thead>
+          <tbody>
+            {{#each Patients}}
+            <tr id="patient-{{patientID}}">
+              <td>{{date}}</td>
+              <td>{{patientName}}</td>
+              <td>
+                <button class="btn btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#editRecordModal{{patientID}}">Edit</button>
+                <button class="btn btn-danger" onclick="deletePatient('{{patientID}}')">Delete</button>
+
+              </td>
+            </tr>
+
+            <!-- Edit Record Modal -->
+           <div class="modal fade" id="editRecordModal{{patientID}}" tabindex="-1" aria-labelledby="editRecordModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-xl">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="editRecordModalLabel">Details</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form method="POST" action="/patients/{{patientID}}">
+							<div class="mb-3">
+								<label for="recordTitle" class="form-label">Patient Name</label>
+								<input type="text" class="form-control" id="updatedName"  name="updatedName" value="{{patientName}}">{{patientName}}
+							</div>
+							<div class="mb-3">
+								<label for="recordNotes" class="form-label">Patient Age</label>
+								<textarea class="form-control" id="updatedAge" rows="3" name="updatedAge" value="{{patientAge}}">{{patientAge}}</textarea>
+							</div>
+							<div class="mb-3">
+								<label for="recordPrescription" class="form-label">Sex</label>
+								<textarea class="form-control" id="updatedSex" rows="3"  name="updatedSex" value="{{Sex}}">{{Sex}}</textarea>
+							</div>
+              <div class="mb-3">
+								<label for="recordPrescription" class="form-label">Blood Type</label>
+								<textarea class="form-control" id="updatedBloodType" rows="3"  name="updatedBloodType" value="{{bloodType}}">{{this.bloodType}}</textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary">Save changes</button>
+						</div>
+						</form>
+						</div>
+					</div>
+					</div>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
 
   </section>
 
-
+<script src="../public/js/main.js"></script>
 </body>
 
 </html>

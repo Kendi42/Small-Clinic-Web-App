@@ -113,7 +113,7 @@ app.post("/user", (req, res) => {
     
   } 
 }
-
+})
 
 
 /* --------- Going From Doctors page to Patients page --------*/

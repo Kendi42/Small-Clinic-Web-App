@@ -89,7 +89,7 @@ function deleteRecord(recordID){
 }
 
 //Selecting a patient and viewing it
-function patientPage(patientID){
+/*function patientPage(patientID){
 	console.log("Patient ID", patientID);
 	fetch(`/patients/${patientID}`, {
 		method: 'POST'
@@ -97,4 +97,4 @@ function patientPage(patientID){
     .catch(error => {
 		console.error('Error', error);
 	  });
-}
+}*/

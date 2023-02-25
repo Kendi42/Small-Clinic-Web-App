@@ -72,7 +72,7 @@
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<form action="{{patient.patientID}}/newrecord" method="POST">
+								<form action="http://localhost:4000/patients/{{patient.patientID}}/newrecord" method="POST">
 									<div class="mb-3">
 										<label for="title" class="col-form-label">Session Title:</label>
 										<input id="title" name="title" type="text" class="form-control"/>

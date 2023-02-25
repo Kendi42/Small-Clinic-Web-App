@@ -8,16 +8,44 @@
     "lastVisit": "21/3/22",
     "medicalRecords": [
       {
-        "id": "a498005d-ec48-4da5-8b7b-afe85179ecba",
+        "id": "d1c39f54-9280-49bb-b817-91b174659075",
         "date": "Sat Feb 25 2023",
-        "title": "Headache",
-        "sessionnotes": "The patient is in pain",
+        "title": "Annual Check up",
+        "sessionnotes": "Patient appears to be in good health",
+        "prescription": "No prescription"
+      },
+      {
+        "id": "a70636a9-0667-48af-b31e-f73284381153",
+        "date": "Sat Feb 25 2023",
+        "title": "Chronic Fatigue",
+        "sessionnotes": "Tired",
         "prescription": "Panadol"
       },
       {
-        "id": "ed6b741d-206a-4c20-9dd5-3dd94d1f9381",
+        "id": "5a324661-77bd-4219-843a-07033a02e9d1",
+        "date": "Sat Feb 25 2023",
+        "title": "Pain",
+        "sessionnotes": "Pain",
+        "prescription": "Panadol"
+      },
+      {
+        "id": "ae397672-953e-4ca4-95c4-1a820767effd",
         "date": "Sat Feb 25 2023",
         "title": "Stomach pain",
+        "sessionnotes": "Pain",
+        "prescription": "Panadol"
+      },
+      {
+        "id": "497c3e62-b036-4878-98c0-816af2201eae",
+        "date": "Sat Feb 25 2023",
+        "title": "Ailment",
+        "sessionnotes": "Pain",
+        "prescription": "Panadol"
+      },
+      {
+        "id": "ad6802b7-ab5d-4ab2-aba6-f8e21a637409",
+        "date": "Sat Feb 25 2023",
+        "title": "Ailment 2",
         "sessionnotes": "Pain",
         "prescription": "Panadol"
       }

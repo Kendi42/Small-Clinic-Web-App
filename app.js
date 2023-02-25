@@ -184,17 +184,17 @@ app.delete('/patients/:patientID/:id', (req, res) => {
 /* --------- Updating Medical records --------*/
 app.post('/patients/:patientID/:recordID', (req, res) => {
   console.log("Inside update post method");
-  const { patientID, recordID }= req.params;
+  let { patientID, recordID }= req.params;
   console.log("Patient ID", patientID);
   console.log("Record ID", recordID);
-  const { updatedTitle, updatedNotes, updatedPrescription } = req.body;
+  let { updatedTitle, updatedNotes, updatedPrescription } = req.body;
   console.log("Updated Information", updatedTitle, updatedNotes, updatedPrescription);
 
-  const patient= Patients.find(patient => patient.patientID === patientID);
-  const patientIndex = Patients.findIndex(patient => patient.patientID === patientID);
+  let patient= Patients.find(patient => patient.patientID === patientID);
+  let patientIndex = Patients.findIndex(patient => patient.patientID === patientID);
   console.log("Patient Index", patientIndex);
 
-  const recordIndex = Patients[patientIndex].medicalRecords.findIndex(
+  let recordIndex = Patients[patientIndex].medicalRecords.findIndex(
     (record) => record.id === recordID);
   console.log("RecordIndex", recordIndex);
   if(recordIndex !== -1){
@@ -204,7 +204,7 @@ app.post('/patients/:patientID/:recordID', (req, res) => {
   console.log(Patients);
   writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
   console.log("Record Updated");
-  const medicalRecords = patient.medicalRecords;
+  let medicalRecords = patient.medicalRecords;
   console.log("Medical Records", medicalRecords);  
   return res.render('patient', { patient, medicalRecords });
   }
@@ -280,10 +280,10 @@ app.delete("/patients/:id", (req, res) => {
 /*-------------Editing-----------------*/
 app.post("/patients/reception/:patientID", (req, res) => {
 	console.log("Inside update post method");
-	const { patientID } = req.params;
+	let { patientID } = req.params;
 	console.log("Patient ID", patientID);
 
-	const { updatedName, updatedAge, updatedSex, updatedBloodType, updatedPhone } = req.body;
+	let { updatedName, updatedAge, updatedSex, updatedBloodType, updatedPhone } = req.body;
 	console.log(
 		"Updated Information",
 		updatedName,
@@ -293,8 +293,8 @@ app.post("/patients/reception/:patientID", (req, res) => {
     updatedPhone
 	);
 
-	const patient = Patients.find((patient) => patient.patientID === patientID);
-	const patientIndex = Patients.findIndex(
+	let patient = Patients.find((patient) => patient.patientID === patientID);
+	let patientIndex = Patients.findIndex(
 		(patient) => patient.patientID === patientID
 	);
 	console.log("Patient Index", patientIndex);
@@ -317,16 +317,12 @@ app.post("/patients/reception/:patientID", (req, res) => {
 
 /*-----------Logging Out-------*/
 
-app.use((req, res, next) => {
-	res.header("Cache-Control", "no-cache, private, no-store, must-revalidate");
+app.get("/logout", (req, res, next) => {
+	req.session.destroy();
+  res.header("Cache-Control", "no-cache, private, no-store, must-revalidate");
 	res.header("Expires", "-1");
 	res.header("Pragma", "no-cache");
 	next();
-});
-
-
-app.get("/logout", (req, res, next) => {
-	req.session.destroy();
 	res.redirect("/");
 });
 

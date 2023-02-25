@@ -129,55 +129,44 @@
             </tr>
 
             <!-- Edit Record Modal -->
-            <div class="modal fade" id="editRecordModal{{patientID}}" tabindex="-1"
-              aria-labelledby="editRecordModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="editRecordModalLabel">Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form method="POST" action="/patients/reception/{{patientID}}">
-                      <div class="mb-3">
-                        <label for="recordTitle" class="form-label">Patient Name</label>
-                        <input type="text" class="form-control" id="updatedName" name="updatedName"
-                          value="{{patientName}}">
-                      </div>
-                      <div class="mb-3">
-                        <label for="recordNotes" class="form-label">Patient Age</label>
-                        <textarea class="form-control" id="updatedAge" rows="3" name="updatedAge"
-                          value="{{patientAge}}">{{patientAge}}</textarea>
-                      </div>
-                      <div class="mb-3">
-                        <label for="recordPrescription" class="form-label">Sex</label>
-                        <textarea class="form-control" id="updatedSex" rows="3" name="updatedSex"
-                          value="{{sex}}">{{sex}}</textarea>
-                      </div>
-                      <div class="mb-3">
-                        <label for="recordPrescription" class="form-label">Blood Type</label>
-                        <textarea class="form-control" id="updatedBloodType" rows="3" name="updatedBloodType"
-                          value="{{bloodType}}">{{bloodType}}</textarea>
-                      </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="recordPrescription" class="form-label">Phone Number:</label>
-                    <textarea class="form-control" id="updatedPhone" rows="3" name="updatedPhone"
-                      value="{{phone}}">{{phone}}</textarea>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save changes</button>
-                </div>
-                </form>
-              </div>
-            </div>
+           <div class="modal fade" id="editRecordModal{{patientID}}" tabindex="-1" aria-labelledby="editRecordModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-xl">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="editRecordModalLabel">Details</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<form method="POST" action="/patients/reception/{{patientID}}">
+							<div class="mb-3">
+								<label for="recordTitle" class="form-label">Patient Name</label>
+								<input type="text" class="form-control" id="updatedName"  name="updatedName" value="{{patientName}}">{{patientName}}
+							</div>
+							<div class="mb-3">
+								<label for="recordNotes" class="form-label">Patient Age</label>
+								<textarea class="form-control" id="updatedAge" rows="3" name="updatedAge" value="{{patientAge}}">{{patientAge}}</textarea>
+							</div>
+							<div class="mb-3">
+								<label for="recordPrescription" class="form-label">Sex</label>
+								<textarea class="form-control" id="updatedSex" rows="3"  name="updatedSex" value="{{Sex}}">{{Sex}}</textarea>
+							</div>
+              <div class="mb-3">
+								<label for="recordPrescription" class="form-label">Blood Type</label>
+								<textarea class="form-control" id="updatedBloodType" rows="3"  name="updatedBloodType" value="{{bloodType}}">{{this.bloodType}}</textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary">Save changes</button>
+						</div>
+						</form>
+						</div>
+					</div>
+					</div>
+              {{/each}}
+          </tbody>
+        </table>
       </div>
-      {{/each}}
-      </tbody>
-      </table>
-    </div>
 
   </section>
 

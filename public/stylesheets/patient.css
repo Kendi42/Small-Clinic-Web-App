@@ -23,6 +23,11 @@ a{
     font-size: 3em;
     font-weight: 600;
 }
+#patientnametitle{
+    font-size: 0.8em;
+    font-weight: 400;
+
+}
 
 #leftinfo, #rightinfo{
     font-size: 1.2em;
@@ -36,6 +41,32 @@ a{
 #newrecordbtndiv{
     display: flex;
     justify-content: right;
+}
+
+table 
+{
+    table-layout:fixed;
+    width:100%;    
+}
+#tablebtns{
+    display: flex;
+    justify-content: right;
+    justify-content: space-between;
+
+}
+.btn-primary{
+    background-color: #2AC5C5 !important;
+    border: solid #2AC5C5  !important;
+
+}
+.btn-secondary{
+    background-color: #051320 !important;
+    border: solid #051320  !important;
+
+}
+
+textarea{
+    height:25vh; 
 }
 
 @media (max-width: 767.98px) { 

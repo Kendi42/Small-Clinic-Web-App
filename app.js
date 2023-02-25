@@ -83,8 +83,10 @@ app.post("/user", (req, res) => {
     //passing the users name to display on the welcome page if they are a doctor
     const user = Users.find(user => user.username === Users[i].username);
     console.log("Specific User information", user);
+    const todaysDate= new Date().toDateString();
+    console.log("Todays Date", todaysDate);
     console.log("Patient information", Patients);
-    return res.render('doctor', {user, Patients});
+    return res.render('doctor', {user, todaysDate, Patients});
   } 
 }
 return res.send("Invalid username or password");

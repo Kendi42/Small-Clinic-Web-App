@@ -21,7 +21,7 @@ let Patients = JSON.parse(rawPatients);
 
 /*---- Initializing App and PORT ----*/
 const app = express();
-const PORT = 5000;
+const PORT = 4000;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");

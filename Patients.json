@@ -20,6 +20,13 @@
         "title": "Annual Check up",
         "sessionnotes": "Patient appears to be in good health",
         "prescription": "No prescription"
+      },
+      {
+        "id": "86507991-5e20-4d02-8177-4dc1c41c8825",
+        "date": "Sat Feb 25 2023",
+        "title": "Erectile Dysfunction",
+        "sessionnotes": "Marriage will fall apart soon. Get a good divorce lawyer. Wife is probably cheating with the neighbor.",
+        "prescription": "Viagra"
       }
     ]
   },
@@ -34,9 +41,9 @@
       {
         "id": "a498005d-ec48-4da5-8b7b-afe85179ecba",
         "date": "Sat Feb 25 2023",
-        "title": "Headache",
-        "sessionnotes": "The patient is in pain",
-        "prescription": "Panadol"
+        "title": "Cancer",
+        "sessionnotes": "Patient is terminally ill. Tumors in heart and liver. Only 6 months to live",
+        "prescription": "Chemotherapy. Say goodbye to loved ones. \r\n"
       }
     ]
   },
@@ -63,5 +70,13 @@
         "prescription": "Panadol"
       }
     ]
+  },
+  {
+    "patientID": "94e2f2a4-4328-493b-a35b-9c5fdbcbc683",
+    "date": "Sat Feb 25 2023",
+    "patientName": "Harriet Tubman",
+    "patientAge": "203",
+    "Sex": "F",
+    "bloodType": "O+"
   }
 ]

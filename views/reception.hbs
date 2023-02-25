@@ -121,16 +121,17 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Date</th>
               <th>Patient Name</th>
+              <th>Contact Information</th>
+
 
             </tr>
           </thead>
           <tbody>
             {{#each Patients}}
             <tr id="patient-{{patientID}}">
-              <td>{{date}}</td>
               <td>{{patientName}}</td>
+              <td>{{phone}}</td>
               <td>
                 <button class="btn btn-info" data-bs-toggle="modal"
                   data-bs-target="#editRecordModal{{patientID}}">Edit</button>

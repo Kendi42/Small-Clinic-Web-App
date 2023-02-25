@@ -67,7 +67,7 @@ function populateRecords(medicalRecords) {
 	  tableBody.append(newRow); 
 	});
   }
-//Deleting a Row
+//Deleting a Row/ Record
 function deleteRecord(patientID, recordID){
 	console.log("Record ID from delte", recordID);
 	console.log("PatientID from delte", patientID);

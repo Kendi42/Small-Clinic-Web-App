@@ -8,18 +8,18 @@
     "lastVisit": "21/3/22",
     "medicalRecords": [
       {
-        "id": "497c3e62-b036-4878-98c0-816af2201eae",
-        "date": "Sat Feb 25 2023",
-        "title": "Ailment",
-        "sessionnotes": "Pain",
-        "prescription": "Panadol"
-      },
-      {
         "id": "ad6802b7-ab5d-4ab2-aba6-f8e21a637409",
         "date": "Sat Feb 25 2023",
         "title": "Ailment 2",
-        "sessionnotes": "Pain",
-        "prescription": "Panadol"
+        "sessionnotes": "Too much pain",
+        "prescription": "Panadol four times a day"
+      },
+      {
+        "id": "e274b6a2-9ee3-4bb5-b17d-0ae8b0bf71fb",
+        "date": "Sat Feb 25 2023",
+        "title": "Annual Check up",
+        "sessionnotes": "Patient appears to be in good health",
+        "prescription": "No prescription"
       }
     ]
   },
@@ -37,13 +37,6 @@
         "title": "Headache",
         "sessionnotes": "The patient is in pain",
         "prescription": "Panadol"
-      },
-      {
-        "id": "1ba99fea-4dd8-49bb-8601-839577e0d3b9",
-        "date": "Sat Feb 25 2023",
-        "title": "Weekly checkup",
-        "sessionnotes": "Patient appears to be in good health",
-        "prescription": "No prescription "
       }
     ]
   },

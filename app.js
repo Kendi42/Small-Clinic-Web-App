@@ -157,6 +157,37 @@ app.delete('/patients/:patientID/:id', (req, res) => {
   }
 });
 
+/* --------- Updating Medical records --------*/
+app.post('/patients/:patientID/:recordID', (req, res) => {
+  console.log("Inside update post method");
+  const { patientID, recordID }= req.params;
+  console.log("Patient ID", patientID);
+  console.log("Record ID", recordID);
+  const { updatedTitle, updatedNotes, updatedPrescription } = req.body;
+  console.log("Updated Information", updatedTitle, updatedNotes, updatedPrescription);
+
+  const patient= Patients.find(patient => patient.patientID === patientID);
+  const patientIndex = Patients.findIndex(patient => patient.patientID === patientID);
+  console.log("Patient Index", patientIndex);
+
+  const recordIndex = Patients[patientIndex].medicalRecords.findIndex(
+    (record) => record.id === recordID);
+  console.log("RecordIndex", recordIndex);
+  if(recordIndex !== -1){
+  Patients[patientIndex].medicalRecords[recordIndex].title= updatedTitle;
+  Patients[patientIndex].medicalRecords[recordIndex].sessionnotes= updatedNotes;
+  Patients[patientIndex].medicalRecords[recordIndex].prescription= updatedPrescription;
+  console.log(Patients);
+  writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
+  console.log("Record Updated");
+  const medicalRecords = patient.medicalRecords;
+  console.log("Medical Records", medicalRecords);  
+  return res.render('patient', { patient, medicalRecords });
+  }
+
+});
+
+
 app.get('/backToDoctor', (req, res) => {
   // Redirect back to doctors page
   const user = Users.find(user => user.username === session.userid);
@@ -172,8 +203,6 @@ app.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
-
-
 
 
 

@@ -147,10 +147,11 @@
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-							<form method="POST" action="/patients/reception/{{patientID}}">
+							<form method="POST" action="/patients/reception/">
+              <input type="hidden" name="patientID" value="{{patientID}}">
 							<div class="mb-3">
 								<label for="recordTitle" class="form-label">Patient Name</label>
-								<input type="text" class="form-control" id="updatedName"  name="updatedName" value="{{patientName}}">{{patientName}}
+								<input type="text" class="form-control" id="updatedName"  name="updatedName" value="{{patientName}}">
 							</div>
 							<div class="mb-3">
 								<label for="recordNotes" class="form-label">Patient Age</label>
@@ -163,6 +164,10 @@
               <div class="mb-3">
 								<label for="recordPrescription" class="form-label">Blood Type</label>
 								<textarea class="form-control" id="updatedBloodType" rows="3"  name="updatedBloodType" value="{{bloodType}}">{{this.bloodType}}</textarea>
+							</div>
+              <div class="mb-3">
+								<label for="recordPrescription" class="form-label">Phone Number</label>
+								<textarea class="form-control" id="updatedPhone" rows="3"  name="updatedPhone" value="{{phone}}">{{phone}}</textarea>
 							</div>
 						</div>
 						<div class="modal-footer">

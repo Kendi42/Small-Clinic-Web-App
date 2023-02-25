@@ -141,7 +141,8 @@ app.delete('/patients/:id', (req, res) => {
   console.log("Patient Index", patientIndex);
   // Get the record to be deleted
   const { id }= req.params;
-  const recordIndex = Patients[patientIndex].medicalRecords.findIndex(record => record.id === id);
+  const recordIndex = Patients[patientIndex].medicalRecords.findIndex(
+    (record) => record.id === id);
   console.log("RecordIndex", recordIndex);
   if(recordIndex !== -1){
     console.log("Patients[patientIndex].medicalRecords: ", Patients[patientIndex].medicalRecords);
@@ -149,7 +150,9 @@ app.delete('/patients/:id', (req, res) => {
     console.log(Patients);
     writeFileSync(patientJSON, JSON.stringify(Patients, null, 2));
     console.log("Record Deleted");
-    const medicalRecords= patient.medicalRecords;
+    let medicalRecords = patient.medicalRecords.filter(
+			(record) => record.id !== id
+		);
     console.log("Updated medical Records", medicalRecords);
     return res.render('patient', {patient, medicalRecords});
   }

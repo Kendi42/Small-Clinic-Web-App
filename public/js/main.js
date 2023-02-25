@@ -73,15 +73,15 @@ function deleteRecord(recordID){
 	fetch(`/patients/${recordID}`, {
 		method: 'DELETE'
 	  })
-	  .then(response => {
-		if (!response.ok) {
-		  throw new Error('Network response was not ok');
+	  .then((response) => {
+		console.log("Inside then response");
+		// Remove the table row from the DOM
+		const row = document.getElementById(`record-${recordID}`);
+		if (row) {
+			row.remove();
+			console.log("Row removed");
 		}
-		return response.json();
-	  })
-	  .then(data => {
-		console.log('Record deleted:', data);
-	  })
+	})
 	  .catch(error => {
 		console.error('Error deleting record:', error);
 	  });
